@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Pesanan
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Pesanan\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=Pesanan()
+comment2.params=
+comment2.target=double\ getBiaya()
+comment3.params=
+comment3.target=java.lang.String\ getPelanggan()
+comment4.params=
+comment4.target=boolean\ getStatusDiproses()
+comment5.params=
+comment5.target=boolean\ getStatusSelesai()
+comment6.params=biaya
+comment6.target=void\ setBiaya(double)
+comment7.params=baru
+comment7.target=void\ setPelangganBaru(Customer)
+comment8.params=diproses
+comment8.target=void\ setStatusDiproses(boolean)
+comment9.params=diproses
+comment9.target=void\ setStatusSelesai(boolean)
+numComments=10
