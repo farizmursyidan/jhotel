@@ -2,8 +2,8 @@
 /**
  * Write a description of class DatabasePesanan here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author A. Fariz Mursyidan
+ * @version 1.0.0
  */
 public class DatabasePesanan
 {

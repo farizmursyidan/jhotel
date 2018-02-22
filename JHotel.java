@@ -2,12 +2,12 @@
 /**
  * Write a description of class JHotel here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author A. Fariz Mursyidan
+ * @version 1.0.0
  */
 public class JHotel
 {
-    public static void main(String[] rgs)
+    public static void main(String[] args)
     {
 
     }

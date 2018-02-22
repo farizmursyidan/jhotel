@@ -2,8 +2,8 @@
 /**
  * Write a description of class Pesanan here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author A. Fariz Mursyidan
+ * @version 1.0.0
  */
 public class Pesanan
 {
@@ -44,7 +44,7 @@ public class Pesanan
         
     }
 
-    public void setPelangganBaru(Customer baru)
+    public void setPelanggan(Customer baru)
     {
         
     }
