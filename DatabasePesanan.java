@@ -1,9 +1,9 @@
 
 /**
- * Write a description of class DatabasePesanan here.
+ * Ini adalah kelas Database Pesanan yang menampung daftar pesanan.
  *
  * @author A. Fariz Mursyidan
- * @version 1.0.0
+ * @version 01.03.2018
  */
 public class DatabasePesanan
 {

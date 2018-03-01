@@ -3,7 +3,7 @@
  * Write a description of class JHotel here.
  *
  * @author A. Fariz Mursyidan
- * @version 1.0.0
+ * @version 01.03.2018
  */
 public class JHotel
 {

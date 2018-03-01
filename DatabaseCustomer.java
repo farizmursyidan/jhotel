@@ -1,9 +1,9 @@
 
 /**
- * Write a description of class DatabaseCustomer here.
+ * Ini adalah kelas Database Customer yang menampung daftar Customer hotel.
  *
  * @author A. Fariz Mursyidan
- * @version 1.0.0
+ * @version 01.03.2018
  */
 public class DatabaseCustomer
 {

@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Customer
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Customer\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Customer\ here.\r\n\r\n\ @author\ A.\ Fariz\ Mursyidan\r\n\ @version\ 1.0.0\r\n
 comment1.params=id\ nama
 comment1.target=void\ Customer(int,\ java.lang.String)
 comment2.params=
@@ -11,4 +11,6 @@ comment4.params=id
 comment4.target=void\ setID(int)
 comment5.params=nama
 comment5.target=void\ setNama(java.lang.String)
-numComments=6
+comment6.params=
+comment6.target=void\ printData()
+numComments=7
