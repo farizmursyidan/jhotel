@@ -17,7 +17,7 @@ public class Customer
     * @return tidak ada
     */
 
-    public void Customer(int id, String nama)
+    public Customer(int id, String nama)
     {
         this.id = id;
         this.nama = nama;
@@ -44,8 +44,8 @@ public class Customer
     }
 
     /**
-    * Method ini adalah accessor untuk mengembalikan id customer
-    * @return id mengembalikan id customer
+    * Method ini adalah mutator untuk menetapkan id customer
+    * @param id adalah id customer
     */
 
     public void setID(int id)
@@ -54,8 +54,8 @@ public class Customer
     }
 
     /**
-    * Method ini adalah accessor untuk mengembalikan nama customer
-    * @return bintang mengembalikan nama customer
+    * Method ini adalah mutator untuk menetapkan nama customer
+    * @param nama mengembalikan nama customer
     */
 
     public void setNama(String nama)
@@ -64,11 +64,11 @@ public class Customer
     }
 
     /**
-    * Method ini adalah mutator untuk mencetak nama hotel
+    * Method ini adalah mutator untuk mencetak nama customer
     */
 
     public void printData()
     {
-
+        System.out.printf("Nama customer : %s\n",nama);
     }
 }

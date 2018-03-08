@@ -92,6 +92,6 @@ public class Lokasi
 
     public void printData()
     {
-        System.out.printf("Deskripsi Lokasi : %s",deskripsiLokasi);
+        System.out.printf("Deskripsi Lokasi : %s\n",deskripsiLokasi);
     }
 }

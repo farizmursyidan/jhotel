@@ -92,6 +92,6 @@ public class Hotel
 
     public void printData()
     {
-        System.out.printf("Nama : %s",nama);
+        System.out.printf("Nama hotel : %s\n",nama);
     }
 }

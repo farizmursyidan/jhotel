@@ -13,6 +13,7 @@ public class Pesanan
     private String jenisKamar;
     private boolean isDiproses;
     private boolean isSelesai;
+    private Room kamar;
 
     /**
     * Method ini merupakan constructor untuk meng-assign instance variable 
@@ -67,6 +68,11 @@ public class Pesanan
         return isSelesai;
     }    
 
+    public Room getRoom()
+    {
+    	return kamar;
+    }
+
     /**
     * Method ini adalah mutator untuk menetapkan jumlah biaya
     * @param biaya adalah jumlah biaya
@@ -107,13 +113,18 @@ public class Pesanan
         isSelesai = selesai;
     }
 
+    public void setRoom(Room kamar)
+    {
+    	this.kamar = kamar;
+    }
+
     /**
     * Method ini adalah mutator untuk mencetak jumlah biaya
     */
 
     public void printData()
     {
-    	System.out.printf("Biaya yang harus dibayar : %.1f",biaya);
+    	System.out.printf("Biaya yang harus dibayar : %.1f\n",biaya);
     }
 
 }
