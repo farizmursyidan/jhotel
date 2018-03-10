@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=DatabaseRoom
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ DatabaseRoom\ here.\r\n\r\n\ @author\ A.\ Fariz\ Mursyidan\r\n\ @version\ 08.03.2018\r\n
+comment1.params=baru
+comment1.target=boolean\ addRoom(Room)
+comment2.params=id
+comment2.target=boolean\ removeRoom(int)
+comment3.params=
+comment3.target=java.lang.String[]\ getRoomDatabase()
+numComments=4

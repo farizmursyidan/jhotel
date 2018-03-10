@@ -1,6 +1,6 @@
 
 /**
- * Enumeration class TipeKamar - write a description of the enum class here
+ * Ini adalah kelas enum Tipe Kamar yang berisi daftar tipe kamar
  *
  * @author A. Fariz Mursyidan
  * @version 08.03.2018

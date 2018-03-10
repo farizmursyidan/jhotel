@@ -3,18 +3,18 @@
  * Ini adalah kelas Database Pesanan yang menampung daftar pesanan.
  *
  * @author A. Fariz Mursyidan
- * @version 01.03.2018
+ * @version 08.03.2018
  */
 public class DatabasePesanan
 {
-    private String[] listPesanan;
+    private static String[] listPesanan;
 
     /**
     * Method ini berfungsi untuk menambah pesanan baru 
     * @param baru ini adalah parameter untuk membuat pesanan baru
     */
 
-    public boolean addPesanan(Pesanan baru)
+    public static boolean addPesanan(Pesanan baru)
     {
         return false;
     }
@@ -24,7 +24,7 @@ public class DatabasePesanan
     * @param pesan ini adalah parameter untuk menghapus pesanan
     */
 
-    public boolean removePesanan(Pesanan pesan)
+    public static boolean removePesanan(Pesanan pesan)
     {
         return false;
     }
@@ -34,7 +34,7 @@ public class DatabasePesanan
     * @return null
     */
 
-    public String getPesanan(Customer cust)
+    public static Pesanan getPesanan(Customer cust)
     {
         return null;
     }
@@ -44,7 +44,7 @@ public class DatabasePesanan
     * @return null
     */
 
-    public String[] getPesananDatabase()
+    public static String[] getPesananDatabase()
     {
         return null;
     }
@@ -54,7 +54,7 @@ public class DatabasePesanan
     * @return null
     */
 
-    public void pesananDibatalkan(Pesanan pesan)
+    public static void pesananDibatalkan(Pesanan pesan)
     {
         
     }

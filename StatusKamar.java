@@ -1,6 +1,6 @@
 
 /**
- * Enumeration class StatusKamar - write a description of the enum class here
+ * Ini adalah kelas enum Status Kamar yang berisi daftar status kamar
  *
  * @author A. Fariz Mursyidan
  * @version 08.03.2018

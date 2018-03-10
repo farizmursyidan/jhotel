@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Customer
-comment0.text=\r\n\ Ini\ adalah\ kelas\ Customer\ untuk\ mengolah\ data\ customer\ hotel.\r\n\r\n\ @author\ A.\ Fariz\ Mursyidan\r\n\ @version\ 01.03.2018\r\n
+comment0.text=\r\n\ Ini\ adalah\ kelas\ Customer\ untuk\ mengolah\ data\ customer\ hotel.\r\n\r\n\ @author\ A.\ Fariz\ Mursyidan\r\n\ @version\ 08.03.2018\r\n
 comment1.params=id\ nama
 comment1.target=Customer(int,\ java.lang.String)
 comment1.text=\r\n\ Method\ ini\ merupakan\ constructor\ untuk\ meng-assign\ instance\ variable\ \r\n\ @param\ id\ ini\ adalah\ parameter\ untuk\ menentukan\ id\ customer\r\n\ @param\ nama\ ini\ adalah\ parameter\ untuk\ menentukan\ nama\ customer\r\n\ @return\ tidak\ ada\r\n

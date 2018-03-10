@@ -3,7 +3,7 @@
  * Ini adalah kelas Lokasi yang mendeskripsikan lokasi hotel melalui koordinat dan deskripsi.
  *
  * @author A. Fariz Mursyidan
- * @version 01.03.2018
+ * @version 08.03.2018
  */
 public class Lokasi
 {
@@ -92,6 +92,9 @@ public class Lokasi
 
     public void printData()
     {
-        System.out.printf("Deskripsi Lokasi : %s\n",deskripsiLokasi);
+        System.out.println("\nLokasi");
+        System.out.printf("koordinat X : %.1f\n",x_coord);
+        System.out.printf("koordinat Y : %.1f\n",y_coord);
+        System.out.printf("Deskripsi : %s\n",deskripsiLokasi);
     }
 }

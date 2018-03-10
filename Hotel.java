@@ -3,7 +3,7 @@
  * Ini adalah kelas Hotel yang mendeskripsikan nama, lokasi, dan bintang hotel tersebut.
  *
  * @author A. Fariz Mursyidan
- * @version 01.03.2018
+ * @version 08.03.2018
  */
 public class Hotel
 {
@@ -92,6 +92,9 @@ public class Hotel
 
     public void printData()
     {
-        System.out.printf("Nama hotel : %s\n",nama);
+        System.out.println("\nHotel");
+        System.out.println("Nama Hotel : " + nama);
+        System.out.println("Lokasi : " + lokasi.getDeskripsi());
+        System.out.println("Bintang : " + bintang);
     }
 }

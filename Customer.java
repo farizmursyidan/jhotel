@@ -3,7 +3,7 @@
  * Ini adalah kelas Customer untuk mengolah data customer hotel.
  *
  * @author A. Fariz Mursyidan
- * @version 01.03.2018
+ * @version 08.03.2018
  */
 public class Customer
 {
@@ -69,6 +69,8 @@ public class Customer
 
     public void printData()
     {
-        System.out.printf("Nama customer : %s\n",nama);
+        System.out.println("\nCustomer");
+        System.out.printf("ID : %d\n",id);
+        System.out.printf("Nama : %s\n",nama);
     }
 }
