@@ -34,7 +34,7 @@ public class JHotel
         pesan.printData();
 
         System.out.println("\n====================DoubleRoom====================");
-        Administrasi.pesananDitugaskan(pesan, doubleRoom);
+        Administrasi.pesananDitugaskan(pesan2, doubleRoom);
         doubleRoom.printData();
         pesan2.printData();
 
