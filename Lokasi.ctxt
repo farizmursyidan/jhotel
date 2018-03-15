@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Lokasi
-comment0.text=\r\n\ Ini\ adalah\ kelas\ Lokasi\ yang\ mendeskripsikan\ lokasi\ hotel\ melalui\ koordinat\ dan\ deskripsi.\r\n\r\n\ @author\ A.\ Fariz\ Mursyidan\r\n\ @version\ 01.03.2018\r\n
+comment0.text=\r\n\ Ini\ adalah\ kelas\ Lokasi\ yang\ mendeskripsikan\ lokasi\ hotel\ melalui\ koordinat\ dan\ deskripsi.\r\n\r\n\ @author\ A.\ Fariz\ Mursyidan\r\n\ @version\ 08.03.2018\r\n
 comment1.params=x_coord\ y_coord\ deskripsiLokasi
 comment1.target=Lokasi(float,\ float,\ java.lang.String)
 comment1.text=\r\n\ Method\ ini\ merupakan\ constructor\ untuk\ meng-assign\ instance\ variable\ \r\n\ @param\ x_coord\ ini\ adalah\ parameter\ untuk\ menentukan\ koordinat\ x\ dari\ lokasi\r\n\ @param\ y_coord\ ini\ adalah\ parameter\ untuk\ menentukan\ koordinat\ y\ dari\ lokasi\r\n\ @param\ deskripsiLokasi\ ini\ adalah\ parameter\ untuk\ memberikan\ deskripsi\ dari\ lokasi\ hotel\r\n\ @return\ tidak\ ada\r\n

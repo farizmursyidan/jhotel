@@ -8,9 +8,8 @@
 public class Pesanan
 {
     private double biaya;
+    private double jumlahHari;
     private Customer pelanggan;
-    private String namaPelanggan;
-    private TipeKamar tipeKamar;
     private boolean isDiproses;
     private boolean isSelesai;
     private Room kamar;
@@ -22,10 +21,12 @@ public class Pesanan
     * @return tidak ada
     */
 
-    public Pesanan(double biaya, Customer pelanggan)
+    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar)
     {
-    	this.biaya = biaya;
+        this.biaya = kamar.getDailyTariff()*jumlahHari;
+    	this.jumlahHari = jumlahHari;
     	this.pelanggan = pelanggan;
+        this.kamar = kamar;
     }
 
     /**
@@ -38,6 +39,11 @@ public class Pesanan
         return biaya;
     }
 
+    public double getJumlahHari()
+    {
+        return jumlahHari;
+    }
+
     /**
     * Method ini adalah accessor untuk mengembalikan data pelanggan
     * @return pelanggan mengembalikan data pelanggan
@@ -46,26 +52,6 @@ public class Pesanan
     public Customer getPelanggan()
     {
         return pelanggan;
-    }
-
-    /**
-    * Method ini adalah accessor untuk mengembalikan nama pelanggan
-    * @return namaPelanggan mengembalikan nama pelanggan
-    */
-
-    public String getNamaPelanggan()
-    {
-    	return namaPelanggan;
-    }
-
-    /**
-    * Method ini adalah accessor untuk mengembalikan tipe kamar
-    * @return tipeKamar mengembalikan tipe kamar
-    */
-
-    public TipeKamar getTipeKamar()
-    {
-    	return tipeKamar;
     }
 
     /**
@@ -103,9 +89,14 @@ public class Pesanan
     * @param biaya adalah jumlah biaya
     */
 
-    public void setBiaya(double biaya)
+    public void setBiaya()
     {
-        this.biaya = biaya;
+        biaya = kamar.getDailyTariff()*jumlahHari;
+    }
+
+    public void setJumlahHari(double jumlahHari)
+    {
+        this.jumlahHari = jumlahHari;
     }
 
     /**
@@ -116,26 +107,6 @@ public class Pesanan
     public void setPelanggan(Customer pelanggan)
     {
         this.pelanggan = pelanggan;
-    }
-
-    /**
-    * Method ini adalah mutator untuk menetapkan nama pelanggan baru
-    * @param namaPelanggan adalah nama pelanggan baru
-    */
-
-    public void setNamaPelanggan(String namaPelanggan)
-    {
-    	this.namaPelanggan = namaPelanggan;
-    }
-
-    /**
-    * Method ini adalah mutator untuk menetapkan tipe kamar pelanggan
-    * @param tipeKamar adalah tipe kamar pelanggan
-    */
-
-    public void setTipeKamar(TipeKamar tipeKamar)
-    {
-    	this.tipeKamar = tipeKamar;
     }
 
     /**
@@ -176,9 +147,10 @@ public class Pesanan
     {
         System.out.println("\nPesanan");
     	System.out.println("Nama Pelanggan : " + pelanggan.getNama());
-    	System.out.printf("Tipe Kamar : %s\n",tipeKamar);
     	System.out.println("Status Layanan Diproses : " + isDiproses);
     	System.out.println("Status Layanan Selesai : " + isSelesai);
+        System.out.println("Jumlah Hari : " + jumlahHari);
+        System.out.println("Biaya : " + biaya);
     }
 
 }

@@ -5,14 +5,12 @@
  * @author A. Fariz Mursyidan
  * @version 08.03.2018
  */
-public class Room
+public abstract class Room
 {
     private Hotel hotel;
-    private int id;
     private String nomor_kamar;
     private boolean isAvailable;
-    private Customer customer;
-    private double dailyTariff;
+    protected double dailyTariff;
     private StatusKamar status_kamar;
     private Pesanan pesan;
 
@@ -21,19 +19,17 @@ public class Room
     * @param hotel adalah parameter untuk memasukkan data dari kelas hotel
     * @param nomor_kamar adalah nomor kamar pelanggan
     * @param isAvailable adalah status ketersediaan kamar
-    * @param customer adalah parameter untuk memasukkan data dari kelas Customer
     * @param dailyTariff adalah biaya kamar
     * @param status_kamar adalah status kamar saat ini
+    * @param pesan adalah parameter untuk memasukkan data dari kelas pesanan
     * @return tidak ada
     */
 
-    public Room(Hotel hotel, String nomor_kamar, boolean isAvailable, Customer customer, double dailyTariff, StatusKamar status_kamar)
+    public Room(Hotel hotel, String nomor_kamar, boolean isAvailable, StatusKamar status_kamar)
     {
         this.hotel = hotel;
         this.nomor_kamar = nomor_kamar;
         this.isAvailable = isAvailable;
-        this.customer = customer;
-        this.dailyTariff = dailyTariff;
         this.status_kamar = status_kamar;
     }
 
@@ -45,16 +41,6 @@ public class Room
     public Hotel getHotel()
     {
         return hotel;
-    }
-
-    /**
-    * Method ini adalah accessor untuk mengembalikan ID
-    * @return id mengembalikan ID
-    */
-
-    public int getID()
-    {
-        return id;
     }
 
     /**
@@ -75,16 +61,6 @@ public class Room
     public boolean getStatusAvailable()
     {
         return isAvailable;
-    }
-
-    /**
-    * Method ini adalah accessor untuk mengembalikan data pelanggan
-    * @return customer mengembalikan data pelanggan
-    */
-
-    public Customer getCustomer()
-    {
-        return customer;
     }
 
     /**
@@ -117,6 +93,8 @@ public class Room
         return pesan;
     }
 
+    public abstract TipeKamar getTipeKamar();
+
     /**
     * Method ini adalah mutator untuk menetapkan data hotel
     * @param hotel adalah data hotel
@@ -125,16 +103,6 @@ public class Room
     public void setHotel(Hotel hotel)
     {
         this.hotel = hotel;
-    }
-
-    /**
-    * Method ini adalah mutator untuk menetapkan ID
-    * @param id adalah ID
-    */
-
-    public void setID(int id)
-    {
-        this.id = id;
     }
 
     /**
@@ -155,16 +123,6 @@ public class Room
     public void setStatusAvailable(boolean isAvailable)
     {
         this.isAvailable = isAvailable;
-    }
-
-    /**
-    * Method ini adalah mutator untuk menetapkan data pelanggan
-    * @param customer adalah data pelanggan
-    */
-
-    public void setCustomer(Customer customer)
-    {
-        this.customer = customer;
     }
 
     /**
@@ -207,8 +165,8 @@ public class Room
         System.out.println("Nama Hotel : " + hotel.getNama());
         System.out.printf("Nomor Kamar : %s\n",nomor_kamar);
         System.out.println("Tersedia : " + isAvailable);
-        System.out.println("Pelanggan : " + customer.getNama());
         System.out.println("Harga : " + dailyTariff);
+        System.out.println("Tipe Kamar : " + getTipeKamar().toString());
         System.out.println("Status Kamar : " + status_kamar);
     }
 }
