@@ -7,7 +7,7 @@
  */
 public class DatabaseCustomer
 {
-    private static String[] listCustomer;
+    private static Customer listCustomer;
 
     /**
     * Method ini berfungsi untuk menambah customer baru 

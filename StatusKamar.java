@@ -11,15 +11,15 @@ public enum StatusKamar
     PROCESSED("Processed"),
     VACANT("Vacant");
 
-    public String toString;
+    public String deskripsi;
 
-    StatusKamar(String toString)
+    StatusKamar(String deskripsi)
     {
-    	this.toString = toString;
+    	this.deskripsi = deskripsi;
     }
 
     public String toString()
     {
-    	return toString;
+    	return deskripsi;
     }
 }

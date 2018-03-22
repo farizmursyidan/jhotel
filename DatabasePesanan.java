@@ -7,7 +7,7 @@
  */
 public class DatabasePesanan
 {
-    private static String[] listPesanan;
+    private static Pesanan listPesanan;
 
     /**
     * Method ini berfungsi untuk menambah pesanan baru 

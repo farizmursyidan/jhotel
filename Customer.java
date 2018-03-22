@@ -1,3 +1,4 @@
+import java.text.*;
 import java.util.Date;
 import java.util.regex.*;
 /**
@@ -61,6 +62,10 @@ public class Customer
 
     public Date getDOB()
     {
+        DateFormat formatter = new SimpleDateFormat("'DOB : 'dd MMMM yyyy");
+        String output = formatter.format(dob);
+        //System.out.print(output);
+        System.out.println(output);
         return dob;
     }
 
@@ -106,19 +111,23 @@ public class Customer
         this.dob = dob;
     }
 
-    /**
-    * Method ini adalah mutator untuk mencetak nama customer
-    */
-
-    // public void printData()
-    // {
-    //     System.out.println("\nCustomer");
-    //     System.out.printf("ID : %d\n",id);
-    //     System.out.printf("Nama : %s\n",nama);
-    // }
-
     public String toString()
     {
-        return null;
+        if(DatabasePesanan.getPesanan(this) != null)
+        {
+            return "\nCustomer ID   : " + id +
+                   "\nNama          : " + nama +
+                   "\nE-mail        : " + email +
+                   "\nDate of Birth : " + dob +
+                   "\nBooking order is in progress";
+        }
+
+        else
+        {
+            return "\nCustomer ID   : " + id +
+                   "\nNama          : " + nama +
+                   "\nE-mail        : " + email +
+                   "\nDate of Birth : " + dob;
+        }
     }
 }

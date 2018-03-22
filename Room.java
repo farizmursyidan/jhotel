@@ -157,7 +157,22 @@ public abstract class Room
 
     public String toString()
     {
-        return null;
+        if(isAvailable)
+        {
+            return "Nama Hotel      : " + hotel.getNama() +
+                   "Tipe Kamar      : " + getTipeKamar() +
+                   "Harga           : " + getDailyTariff() +
+                   "Status Kamar    : " + status_kamar;
+        }
+
+        else
+        {
+            return "Nama Hotel      : " + hotel.getNama() +
+                   "Tipe Kamar      : " + getTipeKamar() +
+                   "Harga           : " + getDailyTariff() +
+                   "Status Kamar    : " + status_kamar +
+                   "Pelanggan       : " + pesan.getPelanggan().getNama();
+        }
     }
 
     /**

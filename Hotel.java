@@ -88,18 +88,8 @@ public class Hotel
 
     public String toString()
     {
-        return null;
+        return "\nNama Hotel      : " + nama +
+               "\nLokasi          : " + lokasi.getDeskripsi() +
+               "\nBintang         : " + bintang;
     }
-
-    /**
-    * Method ini adalah mutator untuk mencetak nama hotel
-    */
-
-    // public void printData()
-    // {
-    //     System.out.println("\nHotel");
-    //     System.out.println("Nama Hotel : " + nama);
-    //     System.out.println("Lokasi : " + lokasi.getDeskripsi());
-    //     System.out.println("Bintang : " + bintang);
-    // }
 }

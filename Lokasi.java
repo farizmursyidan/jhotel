@@ -88,18 +88,8 @@ public class Lokasi
 
     public String toString()
     {
-        return null;
+        return "\nKoordinat X      : " + x_coord +
+               "\nKoordinat Y      : " + y_coord +
+               "\nDeskripsi Lokasi : " + deskripsiLokasi;
     }
-
-    /**
-    * Method ini adalah mutator untuk mencetak deskripsi lokasi
-    */
-
-    // public void printData()
-    // {
-    //     System.out.println("\nLokasi");
-    //     System.out.printf("koordinat X : %.1f\n",x_coord);
-    //     System.out.printf("koordinat Y : %.1f\n",y_coord);
-    //     System.out.printf("Deskripsi : %s\n",deskripsiLokasi);
-    // }
 }

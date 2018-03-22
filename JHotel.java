@@ -11,8 +11,9 @@ public class JHotel
 {
     public static void main(String[] args)
     {
-        Customer cust1 = new Customer(123, "fariz", new GregorianCalendar(1997,07,12).getTime());
-        //Customer pelanggan = new Customer(1506724682, "Fariz");
+        Customer cust1 = new Customer(123, "fariz", new GregorianCalendar(1997,00,12).getTime());
+        cust1.getDOB();
+        // Customer pelanggan = new Customer(1506724682, "Fariz");
         // Lokasi lokasiHotel = new Lokasi(15067, 24682, "Lokasi hotel ini dekat UI");
         // Hotel hotel = new Hotel("Hotel Fariz", lokasiHotel, 5);
         // Room singleRoom = new SingleRoom(hotel, "123", true, StatusKamar.BOOKED);

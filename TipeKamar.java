@@ -11,15 +11,15 @@ public enum TipeKamar
     DOUBLE("Double"),
     PREMIUM("Premium");
 
-    public String toString;
+    public String deskripsi;
 
-    TipeKamar(String toString)
+    TipeKamar(String deskripsi)
     {
-    	this.toString = toString;
+    	this.deskripsi = deskripsi;
     }
 
     public String toString()
     {
-    	return toString;
+    	return deskripsi;
     }
 }
