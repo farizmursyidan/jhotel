@@ -1,4 +1,5 @@
-
+import java.util.Date;
+import java.util.regex.*;
 /**
  * Ini adalah kelas Customer untuk mengolah data customer hotel.
  *
@@ -9,6 +10,8 @@ public class Customer
 {
     protected int id;
     protected String nama;
+    protected String email;
+    protected Date dob;
 
     /**
     * Method ini merupakan constructor untuk meng-assign instance variable 
@@ -17,10 +20,18 @@ public class Customer
     * @return tidak ada
     */
 
-    public Customer(int id, String nama)
+    public Customer(int id, String nama, int tanggal, int bulan, int tahun)
     {
         this.id = id;
         this.nama = nama;
+        this.dob = new Date(tanggal,bulan,tahun);
+    }
+
+    public Customer(int id, String nama, Date dob)
+    {
+        this.id = id;
+        this.nama = nama;
+        this.dob = dob;
     }
 
     /**
@@ -43,6 +54,16 @@ public class Customer
         return nama;
     }
 
+    public String getEmail()
+    {
+        return email;
+    }
+
+    public Date getDOB()
+    {
+        return dob;
+    }
+
     /**
     * Method ini adalah mutator untuk menetapkan id customer
     * @param id adalah id customer
@@ -63,14 +84,41 @@ public class Customer
         this.nama = nama;
     }
 
+    public void setEmail(String email)
+    {
+        String pattern = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9][A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+        Pattern r = Pattern.compile(pattern);
+        Matcher m = r.matcher(email);
+        
+        if (m.matches())
+        {
+            this.email = email;
+        }
+
+        else
+        {
+            this.email = null;
+        }
+    }
+
+    public void setDOB(Date dob)
+    {
+        this.dob = dob;
+    }
+
     /**
     * Method ini adalah mutator untuk mencetak nama customer
     */
 
-    public void printData()
+    // public void printData()
+    // {
+    //     System.out.println("\nCustomer");
+    //     System.out.printf("ID : %d\n",id);
+    //     System.out.printf("Nama : %s\n",nama);
+    // }
+
+    public String toString()
     {
-        System.out.println("\nCustomer");
-        System.out.printf("ID : %d\n",id);
-        System.out.printf("Nama : %s\n",nama);
+        return null;
     }
 }

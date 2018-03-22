@@ -10,9 +10,9 @@ public abstract class Room
     private Hotel hotel;
     private String nomor_kamar;
     private boolean isAvailable;
-    protected double dailyTariff;
     private StatusKamar status_kamar;
     private Pesanan pesan;
+    protected double dailyTariff;
 
     /**
     * Method ini merupakan constructor untuk meng-assign instance variable 
@@ -155,18 +155,23 @@ public abstract class Room
         this.pesan = pesan;
     }
 
+    public String toString()
+    {
+        return null;
+    }
+
     /**
     * Method ini adalah mutator untuk mencetak data kamar
     */
 
-    public void printData()
-    {
-        System.out.println("\nRoom");
-        System.out.println("Nama Hotel : " + hotel.getNama());
-        System.out.printf("Nomor Kamar : %s\n",nomor_kamar);
-        System.out.println("Tersedia : " + isAvailable);
-        System.out.println("Harga : " + dailyTariff);
-        System.out.println("Tipe Kamar : " + getTipeKamar().toString());
-        System.out.println("Status Kamar : " + status_kamar);
-    }
+    // public void printData()
+    // {
+    //     System.out.println("\nRoom");
+    //     System.out.println("Nama Hotel : " + hotel.getNama());
+    //     System.out.printf("Nomor Kamar : %s\n",nomor_kamar);
+    //     System.out.println("Tersedia : " + isAvailable);
+    //     System.out.println("Harga : " + dailyTariff);
+    //     System.out.println("Tipe Kamar : " + getTipeKamar().toString());
+    //     System.out.println("Status Kamar : " + status_kamar);
+    // }
 }

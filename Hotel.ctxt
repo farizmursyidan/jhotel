@@ -23,6 +23,5 @@ comment7.params=bintang
 comment7.target=void\ setBintang(int)
 comment7.text=\r\n\ Method\ ini\ adalah\ mutator\ untuk\ menetapkan\ bintang\ hotel\r\n\ @param\ bintang\ adalah\ bintang\ hotel\r\n
 comment8.params=
-comment8.target=void\ printData()
-comment8.text=\r\n\ Method\ ini\ adalah\ mutator\ untuk\ mencetak\ nama\ hotel\r\n
+comment8.target=java.lang.String\ toString()
 numComments=9

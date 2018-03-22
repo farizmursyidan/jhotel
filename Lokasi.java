@@ -86,15 +86,20 @@ public class Lokasi
         deskripsiLokasi = deskripsi;
     }
 
+    public String toString()
+    {
+        return null;
+    }
+
     /**
     * Method ini adalah mutator untuk mencetak deskripsi lokasi
     */
 
-    public void printData()
-    {
-        System.out.println("\nLokasi");
-        System.out.printf("koordinat X : %.1f\n",x_coord);
-        System.out.printf("koordinat Y : %.1f\n",y_coord);
-        System.out.printf("Deskripsi : %s\n",deskripsiLokasi);
-    }
+    // public void printData()
+    // {
+    //     System.out.println("\nLokasi");
+    //     System.out.printf("koordinat X : %.1f\n",x_coord);
+    //     System.out.printf("koordinat Y : %.1f\n",y_coord);
+    //     System.out.printf("Deskripsi : %s\n",deskripsiLokasi);
+    // }
 }

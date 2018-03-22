@@ -1,4 +1,4 @@
-
+import java.util.Date;
 /**
  * Ini adalah kelas Pesanan yang mengolah pesanan customer saat memesan hotel.
  *
@@ -13,6 +13,7 @@ public class Pesanan
     private boolean isDiproses;
     private boolean isSelesai;
     private Room kamar;
+    private Date tanggalPesan;
 
     /**
     * Method ini merupakan constructor untuk meng-assign instance variable 
@@ -84,6 +85,11 @@ public class Pesanan
     	return kamar;
     }
 
+    public Date getTanggalPesan()
+    {
+        return tanggalPesan;
+    }
+
     /**
     * Method ini adalah mutator untuk menetapkan jumlah biaya
     * @param biaya adalah jumlah biaya
@@ -139,18 +145,23 @@ public class Pesanan
     	this.kamar = kamar;
     }
 
+    public String toString()
+    {
+        return null;
+    }
+
     /**
     * Method ini adalah mutator untuk mencetak data pesanan
     */
 
-    public void printData()
-    {
-        System.out.println("\nPesanan");
-    	System.out.println("Nama Pelanggan : " + pelanggan.getNama());
-    	System.out.println("Status Layanan Diproses : " + isDiproses);
-    	System.out.println("Status Layanan Selesai : " + isSelesai);
-        System.out.println("Jumlah Hari : " + jumlahHari);
-        System.out.println("Biaya : " + biaya);
-    }
+    // public void printData()
+    // {
+    //     System.out.println("\nPesanan");
+    // 	System.out.println("Nama Pelanggan : " + pelanggan.getNama());
+    // 	System.out.println("Status Layanan Diproses : " + isDiproses);
+    // 	System.out.println("Status Layanan Selesai : " + isSelesai);
+    //     System.out.println("Jumlah Hari : " + jumlahHari);
+    //     System.out.println("Biaya : " + biaya);
+    // }
 
 }

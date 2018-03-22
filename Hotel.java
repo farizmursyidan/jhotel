@@ -86,15 +86,20 @@ public class Hotel
         this.bintang = bintang;
     }
 
+    public String toString()
+    {
+        return null;
+    }
+
     /**
     * Method ini adalah mutator untuk mencetak nama hotel
     */
 
-    public void printData()
-    {
-        System.out.println("\nHotel");
-        System.out.println("Nama Hotel : " + nama);
-        System.out.println("Lokasi : " + lokasi.getDeskripsi());
-        System.out.println("Bintang : " + bintang);
-    }
+    // public void printData()
+    // {
+    //     System.out.println("\nHotel");
+    //     System.out.println("Nama Hotel : " + nama);
+    //     System.out.println("Lokasi : " + lokasi.getDeskripsi());
+    //     System.out.println("Bintang : " + bintang);
+    // }
 }
