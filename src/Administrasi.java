@@ -28,7 +28,7 @@ public class Administrasi
     public static void roomAmbilPesanan(Pesanan pesan, Room kamar)
     {
         kamar.setStatusKamar(StatusKamar.BOOKED);
-        kamar.setPesanan(pesan);
+//        kamar.setPesanan(pesan);
     }
 
     /**
@@ -39,7 +39,7 @@ public class Administrasi
     public static void roomLepasPesanan(Room kamar)
     {
         kamar.setStatusKamar(StatusKamar.VACANT);
-        kamar.setPesanan(null);
+//        kamar.setPesanan(null);
     }
 
     /**
@@ -53,6 +53,7 @@ public class Administrasi
         Pesanan pesan = kamar.getPesanan();
         pesan.setStatusSelesai(false);
         pesan.setStatusDiproses(false);
+        pesan.setStatusAktif(false);
         pesan.setRoom(null);
         roomLepasPesanan(kamar);
     }
@@ -68,6 +69,7 @@ public class Administrasi
         Pesanan pesan = kamar.getPesanan();
         pesan.setStatusSelesai(true);
         pesan.setStatusDiproses(false);
+        pesan.setStatusAktif(false);
         pesan.setRoom(null);
         roomLepasPesanan(kamar);
     }

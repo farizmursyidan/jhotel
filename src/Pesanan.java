@@ -7,37 +7,43 @@ import java.util.Date;
  */
 public class Pesanan
 {
+    private int id;
     private double biaya;
     private double jumlahHari;
     private Customer pelanggan;
+    private boolean isAktif;
     private boolean isDiproses;
     private boolean isSelesai;
     private Room kamar;
     private Date tanggalPesan;
 
     /**
-    * Method ini merupakan constructor untuk meng-assign instance variable 
-    * @param biaya adalah parameter untuk menentukan biaya hotel
+    * Method ini merupakan constructor untuk meng-assign instance variable
     * @param pelanggan adalah customer yang memesan hotel
     * @return tidak ada
     */
 
-    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar, int tanggal, int bulan, int tahun)
+    public Pesanan(double jumlahHari, Customer pelanggan)
     {
-        this.biaya = kamar.getDailyTariff()*jumlahHari;
     	this.jumlahHari = jumlahHari;
     	this.pelanggan = pelanggan;
-        this.kamar = kamar;
-        this.tanggalPesan = new Date(tanggal,bulan,tahun);
+    	isAktif = true;
+    	tanggalPesan = new Date();
+    	id = DatabasePesanan.getLastPesananID()+1;
     }
 
-    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar, Date tanggalPesan)
+//    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar, Date tanggalPesan)
+//    {
+//        this.biaya = kamar.getDailyTariff()*jumlahHari;
+//        this.jumlahHari = jumlahHari;
+//        this.pelanggan = pelanggan;
+//        this.kamar = kamar;
+//        this.tanggalPesan = tanggalPesan;
+//    }
+
+    public int getID()
     {
-        this.biaya = kamar.getDailyTariff()*jumlahHari;
-        this.jumlahHari = jumlahHari;
-        this.pelanggan = pelanggan;
-        this.kamar = kamar;
-        this.tanggalPesan = tanggalPesan;
+        return id;
     }
 
     /**
@@ -64,6 +70,12 @@ public class Pesanan
     {
         return pelanggan;
     }
+
+    public boolean getStatusAktif()
+    {
+        return isAktif;
+    }
+
 
     /**
     * Method ini adalah accessor untuk mengembalikan status diproses
@@ -100,9 +112,13 @@ public class Pesanan
         return tanggalPesan;
     }
 
+    public void setID()
+    {
+        this.id = id;
+    }
+
     /**
     * Method ini adalah mutator untuk menetapkan jumlah biaya
-    * @param biaya adalah jumlah biaya
     */
 
     public void setBiaya()
@@ -123,6 +139,11 @@ public class Pesanan
     public void setPelanggan(Customer pelanggan)
     {
         this.pelanggan = pelanggan;
+    }
+
+    public void setStatusAktif(boolean aktif)
+    {
+        isAktif = aktif;
     }
 
     /**
@@ -153,6 +174,12 @@ public class Pesanan
     public void setRoom(Room kamar)
     {
     	this.kamar = kamar;
+    }
+
+    public Date setTanggalPesan(Date tanggalPesan)
+    {
+        this.tanggalPesan = tanggalPesan;
+        return tanggalPesan;
     }
 
     public String toString()
