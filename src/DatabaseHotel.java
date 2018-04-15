@@ -1,4 +1,4 @@
-
+import java.util.ArrayList;
 /**
  * Ini adalah kelas Database Hotel yang menampung daftar Hotel.
  *
@@ -7,7 +7,23 @@
  */
 public class DatabaseHotel
 {
-    private static String[] listHotel;
+    private static ArrayList<Hotel> HOTEL_DATABASE = new ArrayList<Hotel>();
+    private static int LAST_HOTEL_ID = 0;
+
+    /**
+    * Method ini adalah accessor untuk mengembalikan data hotel dari database
+    * @return null
+    */
+
+    public static ArrayList<Hotel> getHotelDatabase()
+    {
+        return HOTEL_DATABASE;
+    }
+
+    public static int getLastHotelID()
+    {
+        return LAST_HOTEL_ID;
+    }
 
     /**
     * Method ini berfungsi untuk menambah hotel baru 
@@ -16,7 +32,30 @@ public class DatabaseHotel
 
     public static boolean addHotel(Hotel baru)
     {
+        for(Hotel hotel : HOTEL_DATABASE)
+        {
+            if(hotel.getID() != (baru.getID()))
+            {
+                HOTEL_DATABASE.add(baru);
+                LAST_HOTEL_ID = hotel.getID();
+                return true;
+            }
+        }
+
         return false;
+    }
+
+    public static Hotel getHotel(int id)
+    {
+        for(Hotel hotel : HOTEL_DATABASE)
+        {
+            if(id == hotel.getID())
+            {
+                return hotel;
+            }
+        } 
+
+        return null;
     }
 
     /**
@@ -26,16 +65,19 @@ public class DatabaseHotel
 
     public static boolean removeHotel(int id)
     {
+        for(Hotel hotel : HOTEL_DATABASE)
+        {
+            if(id == hotel.getID())
+            {
+                for(Room kamar : DatabaseRoom.getRoomsFromHotel(hotel))
+                {
+                    DatabaseRoom.removeRoom(hotel, kamar.getNomorKamar());
+                }
+                HOTEL_DATABASE.remove(hotel);
+                return true;
+            }
+        }
+
         return false;
-    }
-
-    /**
-    * Method ini adalah accessor untuk mengembalikan data hotel dari database
-    * @return null
-    */
-
-    public static String[] getHotelDatabase()
-    {
-        return null;
     }
 }

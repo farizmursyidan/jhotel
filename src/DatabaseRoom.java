@@ -8,7 +8,7 @@ import java.util.ArrayList;
  */
 public class DatabaseRoom
 {
-    private static final ArrayList<Room> ROOM_DATABASE = new ArrayList<>();
+    private static ArrayList<Room> ROOM_DATABASE = new ArrayList<Room>();
 
     /**
     * Method ini berfungsi untuk menambah kamar baru 
@@ -42,13 +42,54 @@ public class DatabaseRoom
         return null;
     }
 
+    public static ArrayList<Room> getRoomsFromHotel(Hotel hotel)
+    {
+        ArrayList<Room> tempRoom = new ArrayList<Room>();
+
+        for(Room kamar : ROOM_DATABASE)
+        {
+            if(kamar.getHotel().equals(hotel))
+            {
+                tempRoom.add(kamar);
+            }
+        }
+
+        return tempRoom;
+    }
+
+    public static ArrayList<Room> getVacantRooms()
+    {
+        ArrayList<Room> tempVacantRoom = new ArrayList<Room>();
+
+        for(Room kamar : ROOM_DATABASE)
+        {
+            if(kamar.getStatusKamar().equals(StatusKamar.VACANT))
+            {
+                tempVacantRoom.add(kamar);
+            }
+        }
+
+        return tempVacantRoom;
+    } 
+
     /**
-    * Method ini berfungsi untuk menghapus kamar 
-    * @param id ini adalah parameter untuk menghapus kamar
+    * Method ini berfungsi untuk menghapus kamar
     */
 
-    public static boolean removeRoom(int id)
+    public static boolean removeRoom(Hotel hotel, String nomor_kamar)
     {
+        for(Room kamar : ROOM_DATABASE)
+        {
+            if(kamar.getHotel().equals(hotel) && kamar.getNomorKamar().equals(nomor_kamar))
+            {
+                Administrasi.pesananDibatalkan(kamar);
+                if(ROOM_DATABASE.remove(kamar))
+                {
+                    return true;
+                }
+            }
+        }
+
         return false;
     }
 

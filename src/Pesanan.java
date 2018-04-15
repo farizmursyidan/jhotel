@@ -201,11 +201,11 @@ public class Pesanan
             final_status = "SELESAI";
         }
         
-        return "Dibuat Oleh " +pelanggan.getNama() +
-                ".Proses booking untuk" +kamar.getHotel()+
-                "Kamar Nomor " + kamar.getNomorKamar()+
-                "dengan tipe kamar yang diinginkan "+kamar.getTipeKamar()+
-                ". Status :" +final_status+ ".";
+        return "Dibuat Oleh " + getPelanggan().getNama() +
+                ".Proses booking untuk" + getRoom().getHotel().getNama() +
+                "Kamar Nomor " + getRoom().getNomorKamar() +
+                "dengan tipe kamar yang diinginkan "+ getRoom().getTipeKamar().toString() +
+                ". Status :" + final_status + ".";
     }
 
     /**

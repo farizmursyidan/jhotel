@@ -8,8 +8,8 @@ import java.util.ArrayList;
  */
 public class DatabasePesanan
 {
-    private static final ArrayList<Pesanan> PESANAN_DATABASE = new ArrayList<>();
-    private static final int LAST_PESANAN_ID = 0;
+    private static ArrayList<Pesanan> PESANAN_DATABASE = new ArrayList<Pesanan>();
+    private static int LAST_PESANAN_ID = 0;
 
     /**
     * Method ini berfungsi untuk menambah pesanan baru 
@@ -32,8 +32,7 @@ public class DatabasePesanan
         }
         else
         {
-            PESANAN_DATABASE.add(baru);
-            return true;
+            return false;
         }
     }
 
@@ -60,10 +59,8 @@ public class DatabasePesanan
                     }
                 }
 
-                if(PESANAN_DATABASE.remove(pesanan))
-                {
-                    return true;
-                }
+                PESANAN_DATABASE.remove(pesanan);
+                return true;
             }
         }
 
@@ -77,9 +74,8 @@ public class DatabasePesanan
 
     public static Pesanan getPesanan(int id)
     {
-        for(int i = 0;i < PESANAN_DATABASE.size(); i++)
+        for(Pesanan pesan : PESANAN_DATABASE)
         {
-            Pesanan pesan = PESANAN_DATABASE.get(i);
             if(pesan.getID() == id)
             {
                 return pesan;
@@ -90,9 +86,8 @@ public class DatabasePesanan
 
     public static Pesanan getPesanan(Room kamar)
     {
-        for(int i = 0;i < PESANAN_DATABASE.size(); i++)
+        for(Pesanan pesan : PESANAN_DATABASE)
         {
-            Pesanan pesan = PESANAN_DATABASE.get(i);
             if(pesan.getRoom() == kamar)
             {
                 return pesan;
@@ -103,9 +98,8 @@ public class DatabasePesanan
 
     public static Pesanan getPesananAktif(Customer pelanggan)
     {
-        for(int i = 0;i < PESANAN_DATABASE.size(); i++)
+        for(Pesanan pesan : PESANAN_DATABASE)
         {
-            Pesanan pesan = PESANAN_DATABASE.get(i);
             if(pesan.getPelanggan() == pelanggan && pesan.getStatusAktif() == true)
             {
                 return pesan;
