@@ -32,13 +32,13 @@ public class DatabaseCustomer
     * @param baru ini adalah parameter untuk menambah customer baru
     */
 
-    public static boolean addCustomer(Customer baru)
+    public static boolean addCustomer(Customer baru) throws PelangganSudahAdaException
     {
         for(Customer pelanggan : CUSTOMER_DATABASE)
         {
-            if(pelanggan.getID() == baru.getID())
+            if(pelanggan.getID() == baru.getID() || pelanggan.getEmail() == baru.getEmail())
             {
-                return false;
+                throw new PelangganSudahAdaException(baru);
             }
         }
 
@@ -65,7 +65,7 @@ public class DatabaseCustomer
     * @param id ini adalah parameter untuk menghapus customer
     */
 
-    public static boolean removeCustomer(int id)
+    public static boolean removeCustomer(int id) throws PelangganTidakDitemukanException
     {
         for(Customer pelanggan : CUSTOMER_DATABASE)
         {
@@ -75,7 +75,15 @@ public class DatabaseCustomer
                 {
                     if(pesanan.getPelanggan() == pelanggan)
                     {
-                        DatabasePesanan.removePesanan(pesanan);
+                        try
+                        {
+                            DatabasePesanan.removePesanan(pelanggan);
+                        }
+
+                        catch (PesananTidakDitemukanException pesananTidakAda)
+                        {
+                            System.out.println(pesananTidakAda.getPesan());
+                        }
                     }
                 }
 
@@ -84,6 +92,6 @@ public class DatabaseCustomer
             }
         }
 
-        return false;
+        throw new PelangganTidakDitemukanException(id);
     }
 }

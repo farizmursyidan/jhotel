@@ -10,9 +10,9 @@ public class PremiumRoom extends Room
     private static final TipeKamar TIPE_KAMAR = TipeKamar.PREMIUM;
     private static final double DISCOUNT = 0.3;
     
-    public PremiumRoom(Hotel hotel, String nomor_kamar, StatusKamar status_kamar)
+    public PremiumRoom(Hotel hotel, String nomor_kamar)
     {
-        super(hotel, nomor_kamar, status_kamar);
+        super(hotel, nomor_kamar);
     }
 
     public TipeKamar getTipeKamar()

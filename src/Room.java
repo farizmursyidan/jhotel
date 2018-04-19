@@ -16,11 +16,10 @@ public abstract class Room
     * Method ini merupakan constructor untuk meng-assign instance variable 
     * @param hotel adalah parameter untuk memasukkan data dari kelas hotel
     * @param nomor_kamar adalah nomor kamar pelanggan
-    * @param status_kamar adalah status kamar saat ini
     * @return tidak ada
     */
 
-    public Room(Hotel hotel, String nomor_kamar, StatusKamar status_kamar)
+    public Room(Hotel hotel, String nomor_kamar)
     {
         this.hotel = hotel;
         this.nomor_kamar = nomor_kamar;
@@ -114,7 +113,7 @@ public abstract class Room
     {
         if(DatabasePesanan.getPesanan(this) == null)
         {
-            return "Nama Hotel      : " + getHotel().getNama() +
+            return "\nNama Hotel      : " + getHotel().getNama() +
                    "\nTipe Kamar      : " + getTipeKamar() +
                    "\nHarga           : " + getDailyTariff() +
                    "\nStatus Kamar    : " + getStatusKamar();
@@ -122,7 +121,7 @@ public abstract class Room
 
         else
         {
-            return "Nama Hotel      : " + getHotel().getNama() +
+            return "\nNama Hotel      : " + getHotel().getNama() +
                    "\nTipe Kamar      : " + getTipeKamar() +
                    "\nHarga           : " + getDailyTariff() +
                    "\nStatus Kamar    : " + getStatusKamar() +

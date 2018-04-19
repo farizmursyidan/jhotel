@@ -16,13 +16,13 @@ public class DatabasePesanan
     * @param baru ini adalah parameter untuk membuat pesanan baru
     */
 
-    public static boolean addPesanan(Pesanan baru)
+    public static boolean addPesanan(Pesanan baru) throws PesananSudahAdaException
     {
         for(Pesanan pesan : PESANAN_DATABASE)
         {
             if(pesan.getStatusAktif()==true && pesan.getID()==baru.getID())
             {
-                return false;
+                throw new PesananSudahAdaException(baru);
             }
         }
         PESANAN_DATABASE.add(baru);
@@ -35,7 +35,7 @@ public class DatabasePesanan
     * @param pesan ini adalah parameter untuk menghapus pesanan
     */
 
-    public static boolean removePesanan(Pesanan pesan)
+    public static boolean removePesanan(Customer pesan) throws PesananTidakDitemukanException
     {
         for(Pesanan pesanan : PESANAN_DATABASE)
         {
@@ -58,7 +58,7 @@ public class DatabasePesanan
             }
         }
 
-        return false;
+        throw new PesananTidakDitemukanException(pesan);
     }
 
     /**

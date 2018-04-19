@@ -30,18 +30,18 @@ public class DatabaseHotel
     * @param baru ini adalah parameter untuk menambah hotel baru
     */
 
-    public static boolean addHotel(Hotel baru)
+    public static boolean addHotel(Hotel baru) throws HotelSudahAdaException
     {
         for(Hotel hotel : HOTEL_DATABASE)
         {
-            if(hotel.getID() == (baru.getID()))
+            if(hotel.getID() == baru.getID() || (hotel.getNama().equals(baru.getNama()) && hotel.getLokasi().equals(baru.getLokasi())))
             {
-                return false;
+                throw new HotelSudahAdaException(baru);
             }
         }
 
-        HOTEL_DATABASE.add(baru);
         LAST_HOTEL_ID = baru.getID();
+        HOTEL_DATABASE.add(baru);
         return true;
     }
 
@@ -63,7 +63,7 @@ public class DatabaseHotel
     * @param id ini adalah parameter untuk menghapus hotel
     */
 
-    public static boolean removeHotel(int id)
+    public static boolean removeHotel(int id) throws HotelTidakDitemukanException
     {
         for(Hotel hotel : HOTEL_DATABASE)
         {
@@ -71,13 +71,21 @@ public class DatabaseHotel
             {
                 for(Room kamar : DatabaseRoom.getRoomsFromHotel(hotel))
                 {
-                    DatabaseRoom.removeRoom(hotel, kamar.getNomorKamar());
+                    try
+                    {
+                        DatabaseRoom.removeRoom(hotel, kamar.getNomorKamar());
+                    }
+
+                    catch (RoomTidakDitemukanException kamarTidakAda)
+                    {
+                        System.out.println(kamarTidakAda.getPesan());
+                    }
                 }
                 HOTEL_DATABASE.remove(hotel);
                 return true;
             }
         }
 
-        return false;
+        throw new HotelTidakDitemukanException(id);
     }
 }

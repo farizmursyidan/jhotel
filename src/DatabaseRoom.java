@@ -15,13 +15,13 @@ public class DatabaseRoom
     * @param baru ini adalah parameter untuk menambah kamar baru
     */
 
-    public static boolean addRoom(Room baru)
+    public static boolean addRoom(Room baru) throws RoomSudahAdaException
     {
         for(Room kamar : ROOM_DATABASE)
         {
             if(kamar.getHotel()==baru.getHotel() && kamar.getNomorKamar()==baru.getNomorKamar())
             {
-                return false;
+                throw new RoomSudahAdaException(baru);
             }
         }
 
@@ -76,7 +76,7 @@ public class DatabaseRoom
     * Method ini berfungsi untuk menghapus kamar
     */
 
-    public static boolean removeRoom(Hotel hotel, String nomor_kamar)
+    public static boolean removeRoom(Hotel hotel, String nomor_kamar) throws RoomTidakDitemukanException
     {
         for(Room kamar : ROOM_DATABASE)
         {
@@ -90,7 +90,7 @@ public class DatabaseRoom
             }
         }
 
-        return false;
+        throw new RoomTidakDitemukanException(hotel, nomor_kamar);
     }
 
     /**
