@@ -115,18 +115,18 @@ public abstract class Room
         if(DatabasePesanan.getPesanan(this) == null)
         {
             return "Nama Hotel      : " + getHotel().getNama() +
-                   "Tipe Kamar      : " + getTipeKamar() +
-                   "Harga           : " + getDailyTariff() +
-                   "Status Kamar    : " + getStatusKamar();
+                   "\nTipe Kamar      : " + getTipeKamar() +
+                   "\nHarga           : " + getDailyTariff() +
+                   "\nStatus Kamar    : " + getStatusKamar();
         }
 
         else
         {
             return "Nama Hotel      : " + getHotel().getNama() +
-                   "Tipe Kamar      : " + getTipeKamar() +
-                   "Harga           : " + getDailyTariff() +
-                   "Status Kamar    : " + getStatusKamar() +
-                   "Pelanggan       : " + DatabasePesanan.getPesanan(this).getPelanggan().getNama();
+                   "\nTipe Kamar      : " + getTipeKamar() +
+                   "\nHarga           : " + getDailyTariff() +
+                   "\nStatus Kamar    : " + getStatusKamar() +
+                   "\nPelanggan       : " + DatabasePesanan.getPesanan(this).getPelanggan().getNama();
         }
     }
 

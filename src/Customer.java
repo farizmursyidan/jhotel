@@ -1,5 +1,6 @@
 import java.text.*;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.regex.*;
 /**
  * Ini adalah kelas Customer untuk mengolah data customer hotel.
@@ -13,10 +14,10 @@ public class Customer
     protected String nama;
     protected String email;
     protected Date dob;
+    SimpleDateFormat tbt = new SimpleDateFormat("dd MMMMMMMM yyyy");
 
     /**
-    * Method ini merupakan constructor untuk meng-assign instance variable 
-    * @param id ini adalah parameter untuk menentukan id customer
+    * Method ini merupakan constructor untuk meng-assign instance variable
     * @param nama ini adalah parameter untuk menentukan nama customer
     * @return tidak ada
     */
@@ -25,7 +26,7 @@ public class Customer
     {
         this.id = DatabaseCustomer.getLastCustomerID() + 1;
         this.nama = nama;
-        this.dob = new Date(tanggal,bulan,tahun);
+        this.dob = new GregorianCalendar(tahun, bulan-1, tanggal).getTime();
     }
 
     public Customer(String nama, Date dob)
@@ -62,10 +63,6 @@ public class Customer
 
     public Date getDOB()
     {
-        DateFormat formatter = new SimpleDateFormat("'DOB : 'dd MMMM yyyy");
-        String output = formatter.format(dob);
-        //System.out.print(output);
-        System.out.println(output);
         return dob;
     }
 
@@ -118,7 +115,7 @@ public class Customer
             return "\nCustomer ID   : " + getID() +
                    "\nNama          : " + getNama() +
                    "\nE-mail        : " + getEmail() +
-                   "\nDate of Birth : " + getDOB() +
+                   "\nDate of Birth : " + tbt.format(getDOB()) +
                    "\nBooking order is in progress";
         }
 
@@ -127,7 +124,7 @@ public class Customer
             return "\nCustomer ID   : " + getID() +
                    "\nNama          : " + getNama() +
                    "\nE-mail        : " + getEmail() +
-                   "\nDate of Birth : " + getDOB();
+                   "\nDate of Birth : " + tbt.format(getDOB());
         }
     }
 }

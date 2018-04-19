@@ -19,14 +19,14 @@ public class DatabaseRoom
     {
         for(Room kamar : ROOM_DATABASE)
         {
-            if(!kamar.getHotel().equals(baru.getHotel()) && !kamar.getNomorKamar().equals(baru.getNomorKamar()))
+            if(kamar.getHotel()==baru.getHotel() && kamar.getNomorKamar()==baru.getNomorKamar())
             {
-                ROOM_DATABASE.add(baru);
-                return true;
+                return false;
             }
         }
 
-        return false;
+        ROOM_DATABASE.add(baru);
+        return true;
     }
 
     public static Room getRoom(Hotel hotel, String nomor_kamar)

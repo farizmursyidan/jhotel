@@ -18,22 +18,16 @@ public class DatabasePesanan
 
     public static boolean addPesanan(Pesanan baru)
     {
-        if(PESANAN_DATABASE.contains(baru))
+        for(Pesanan pesan : PESANAN_DATABASE)
         {
-            if(baru.getStatusAktif())
+            if(pesan.getStatusAktif()==true && pesan.getID()==baru.getID())
             {
                 return false;
             }
-            else
-            {
-                PESANAN_DATABASE.add(baru);
-                return true;
-            }
         }
-        else
-        {
-            return false;
-        }
+        PESANAN_DATABASE.add(baru);
+        LAST_PESANAN_ID = baru.getID();
+        return true;
     }
 
     /**

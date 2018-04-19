@@ -34,15 +34,15 @@ public class DatabaseHotel
     {
         for(Hotel hotel : HOTEL_DATABASE)
         {
-            if(hotel.getID() != (baru.getID()))
+            if(hotel.getID() == (baru.getID()))
             {
-                HOTEL_DATABASE.add(baru);
-                LAST_HOTEL_ID = hotel.getID();
-                return true;
+                return false;
             }
         }
 
-        return false;
+        HOTEL_DATABASE.add(baru);
+        LAST_HOTEL_ID = baru.getID();
+        return true;
     }
 
     public static Hotel getHotel(int id)

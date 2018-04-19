@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.target=Hotel
+comment0.text=\r\n\ Ini\ adalah\ kelas\ Hotel\ yang\ mendeskripsikan\ nama,\ lokasi,\ dan\ bintang\ hotel\ tersebut.\r\n\r\n\ @author\ A.\ Fariz\ Mursyidan\r\n\ @version\ 08.03.2018\r\n
+comment1.params=nama\ lokasi\ bintang
+comment1.target=Hotel(java.lang.String,\ Lokasi,\ int)
+comment1.text=\r\n\ Method\ ini\ merupakan\ constructor\ untuk\ meng-assign\ instance\ variable\ \r\n\ @param\ nama\ ini\ adalah\ parameter\ untuk\ menentukan\ nama\ pelanggan\r\n\ @param\ lokasi\ ini\ adalah\ parameter\ untuk\ menentukan\ lokasi\ hotel\r\n\ @param\ bintang\ ini\ adalah\ parameter\ untuk\ memberikan\ bintang\ hotel\r\n\ @return\ tidak\ ada\r\n
+comment2.params=
+comment2.target=int\ getBintang()
+comment2.text=\r\n\ Method\ ini\ adalah\ accessor\ untuk\ mengembalikan\ nilai\ bintang\ hotel\r\n\ @return\ bintang\ mengembalikan\ nilai\ bintang\ hotel\r\n
+comment3.params=
+comment3.target=java.lang.String\ getNama()
+comment3.text=\r\n\ Method\ ini\ adalah\ accessor\ untuk\ mengembalikan\ nama\ hotel\r\n\ @return\ nama\ mengembalikan\ nama\ hotel\r\n
+comment4.params=
+comment4.target=Lokasi\ getLokasi()
+comment4.text=\r\n\ Method\ ini\ adalah\ accessor\ untuk\ mengembalikan\ lokasi\ hotel\r\n\ @return\ lokasi\ mengembalikan\ lokasi\ hotel\r\n
+comment5.params=nama
+comment5.target=void\ setNama(java.lang.String)
+comment5.text=\r\n\ Method\ ini\ adalah\ mutator\ untuk\ menetapkan\ nama\ hotel\r\n\ @param\ nama\ adalah\ nama\ hotel\r\n
+comment6.params=lokasi
+comment6.target=void\ setLokasi(Lokasi)
+comment6.text=\r\n\ Method\ ini\ adalah\ mutator\ untuk\ menetapkan\ lokasi\ hotel\r\n\ @param\ lokasi\ adalah\ lokasi\ hotel\r\n
+comment7.params=bintang
+comment7.target=void\ setBintang(int)
+comment7.text=\r\n\ Method\ ini\ adalah\ mutator\ untuk\ menetapkan\ bintang\ hotel\r\n\ @param\ bintang\ adalah\ bintang\ hotel\r\n
+comment8.params=
+comment8.target=java.lang.String\ toString()
+numComments=9

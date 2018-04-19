@@ -36,15 +36,15 @@ public class DatabaseCustomer
     {
         for(Customer pelanggan : CUSTOMER_DATABASE)
         {
-            if(pelanggan.getID() != baru.getID())
+            if(pelanggan.getID() == baru.getID())
             {
-                CUSTOMER_DATABASE.add(pelanggan);
-                LAST_CUSTOMER_ID = baru.getID();
-                return true;
+                return false;
             }
         }
 
-        return false;
+        CUSTOMER_DATABASE.add(baru);
+        LAST_CUSTOMER_ID = baru.getID();
+        return true;
     }
 
     public static Customer getCustomer(int id)

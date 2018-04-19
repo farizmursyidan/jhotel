@@ -1,3 +1,4 @@
+import javax.xml.crypto.Data;
 import java.util.Date;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -11,68 +12,60 @@ public class JHotel
 {
     public static void main(String[] args)
     {
-        Customer cust1 = new Customer(123, "fariz", new GregorianCalendar(1997,00,12).getTime());
-        cust1.getDOB();
-        // Customer pelanggan = new Customer(1506724682, "Fariz");
-        // Lokasi lokasiHotel = new Lokasi(15067, 24682, "Lokasi hotel ini dekat UI");
-        // Hotel hotel = new Hotel("Hotel Fariz", lokasiHotel, 5);
-        // Room singleRoom = new SingleRoom(hotel, "123", true, StatusKamar.BOOKED);
-        // Pesanan pesan = new Pesanan(3, pelanggan, singleRoom);
-        // Room doubleRoom = new DoubleRoom(hotel, "123", true, StatusKamar.BOOKED);
-        // Pesanan pesan2 = new Pesanan(5, pelanggan, doubleRoom);
+        DatabaseCustomer.addCustomer(new Customer("A", 3, 7, 1997));
+        DatabaseCustomer.addCustomer(new Customer("B", 13, 12, 1997));
+        DatabaseCustomer.addCustomer(new Customer("C", 23, 11, 1997));
 
-        // pelanggan.setEmail("e.t.d@");
-        // System.out.println("e.t.d@ = " + pelanggan.getEmail());
-        // pelanggan.setEmail("Ee_.td@ui.ac.id");
-        // System.out.println("Ee_.td@ui.ac.id = " + pelanggan.getEmail());
-        // pelanggan.setEmail("fariz.modul5@netlab.com");
-        // System.out.println("fariz.modul5@netlab.com = " + pelanggan.getEmail());
-        
+        for(Customer pelanggan : DatabaseCustomer.getCustomerDatabase())
+        {
+            System.out.println(pelanggan);
+        }
 
-        // System.out.println("Welcome to JHotel");
-        // //lokasiHotel.printData();
-        // //pelanggan.printData();
-        // //hotel.printData();
-        
-        // singleRoom.setDailyTariff(1500000);
-        // pesan.setBiaya();
+        DatabaseHotel.addHotel(new Hotel("Alexis", new Lokasi(12, 35, "Alexis"), 5));
+        DatabaseHotel.addHotel(new Hotel("Baubaunya", new Lokasi(45, 67, "Bau"), 5));
+        DatabaseHotel.addHotel(new Hotel("Changrila", new Lokasi(78, 90, "Temennya Shangrila"), 5));
 
-        // doubleRoom.setDailyTariff(3000000);
-        // pesan2.setBiaya();
+        for(Hotel hotel : DatabaseHotel.getHotelDatabase())
+        {
+            System.out.println(hotel);
+        }
 
-        // System.out.println("\n====================SingleRoom====================");
-        // Administrasi.pesananDitugaskan(pesan, singleRoom);
-        // //singleRoom.printData();
-        // //pesan.printData();
+        DatabaseRoom.addRoom(new SingleRoom(DatabaseHotel.getHotel(1), "A1", StatusKamar.VACANT));
+        DatabaseRoom.addRoom(new DoubleRoom(DatabaseHotel.getHotel(2), "B2", StatusKamar.VACANT));
+        DatabaseRoom.addRoom(new PremiumRoom(DatabaseHotel.getHotel(3), "C3", StatusKamar.VACANT));
+        DatabaseRoom.addRoom(new PremiumRoom(DatabaseHotel.getHotel(1), "D4", StatusKamar.VACANT));
 
-        // System.out.println("\n====================DoubleRoom====================");
-        // Administrasi.pesananDitugaskan(pesan2, doubleRoom);
-        // //doubleRoom.printData();
-        // //pesan2.printData();
+        for(Room kamar : DatabaseRoom.getRoomDatabase())
+        {
+            System.out.println(kamar + "\n");
+        }
 
-        // System.out.println("\n====================Pengecekan SingleRoom====================");
+        DatabasePesanan.addPesanan(new Pesanan(1, DatabaseCustomer.getCustomer(1)));
+        DatabasePesanan.addPesanan(new Pesanan(2, DatabaseCustomer.getCustomer(2)));
+        DatabasePesanan.addPesanan(new Pesanan(3, DatabaseCustomer.getCustomer(3)));
 
-        // if(singleRoom instanceof DoubleRoom)
-        // {
-        //     System.out.println("Benar Double Room");
-        // }
+        for(Pesanan pesan : DatabasePesanan.getPesananDatabase())
+        {
+            System.out.println(pesan);
+        }
 
-        // else
-        // {
-        //     System.out.println("Salah, bukan Double Room");
-        // }
+        Administrasi.pesananDitugaskan(DatabasePesanan.getPesananAktif(DatabaseCustomer.getCustomer(1)), DatabaseRoom.getRoom(DatabaseHotel.getHotel(1), "A1"));
+        Administrasi.pesananDitugaskan(DatabasePesanan.getPesananAktif(DatabaseCustomer.getCustomer(2)), DatabaseRoom.getRoom(DatabaseHotel.getHotel(1), "D4"));
+        Administrasi.pesananDitugaskan(DatabasePesanan.getPesananAktif(DatabaseCustomer.getCustomer(3)), DatabaseRoom.getRoom(DatabaseHotel.getHotel(2), "B2"));
 
-        // System.out.println("\n====================Pengecekan DoubleRoom====================");
+        for(Pesanan pesan : DatabasePesanan.getPesananDatabase())
+        {
+            System.out.println(pesan);
+        }
 
-        // if(doubleRoom instanceof DoubleRoom)
-        // {
-        //     System.out.println("Benar Double Room");
-        // }
+        Administrasi.pesananDibatalkan(DatabasePesanan.getPesananAktif(DatabaseCustomer.getCustomer(2)));
+        Administrasi.pesananSelesai(DatabasePesanan.getPesananAktif(DatabaseCustomer.getCustomer(1)));
+        Administrasi.pesananSelesai(DatabasePesanan.getPesananAktif(DatabaseCustomer.getCustomer(3)));
 
-        // else
-        // {
-        //     System.out.println("Salah, bukan Double Room");
-        // }
+        for(Pesanan pesan : DatabasePesanan.getPesananDatabase())
+        {
+            System.out.println(pesan);
+        }
     }
 
     public JHotel()
