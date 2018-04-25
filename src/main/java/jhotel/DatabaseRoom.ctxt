@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=DatabaseRoom
+comment0.text=\r\n\ Ini\ adalah\ kelas\ Database\ Customer\ yang\ menampung\ daftar\ kamar\ hotel.\r\n\r\n\ @author\ A.\ Fariz\ Mursyidan\r\n\ @version\ 08.03.2018\r\n
+comment1.params=baru
+comment1.target=boolean\ addRoom(Room)
+comment1.text=\r\n\ Method\ ini\ berfungsi\ untuk\ menambah\ kamar\ baru\ \r\n\ @param\ baru\ ini\ adalah\ parameter\ untuk\ menambah\ kamar\ baru\r\n
+comment2.params=id
+comment2.target=boolean\ removeRoom(int)
+comment2.text=\r\n\ Method\ ini\ berfungsi\ untuk\ menghapus\ kamar\ \r\n\ @param\ id\ ini\ adalah\ parameter\ untuk\ menghapus\ kamar\r\n
+comment3.params=
+comment3.target=java.lang.String[]\ getRoomDatabase()
+comment3.text=\r\n\ Method\ ini\ adalah\ accessor\ untuk\ mengembalikan\ data\ kamar\ dari\ database\r\n\ @return\ null\r\n
+numComments=4

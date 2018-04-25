@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=DatabasePesanan
+comment0.text=\r\n\ Ini\ adalah\ kelas\ Database\ Pesanan\ yang\ menampung\ daftar\ pesanan.\r\n\r\n\ @author\ A.\ Fariz\ Mursyidan\r\n\ @version\ 08.03.2018\r\n
+comment1.params=baru
+comment1.target=boolean\ addPesanan(Pesanan)
+comment1.text=\r\n\ Method\ ini\ berfungsi\ untuk\ menambah\ pesanan\ baru\ \r\n\ @param\ baru\ ini\ adalah\ parameter\ untuk\ membuat\ pesanan\ baru\r\n
+comment2.params=pesan
+comment2.target=boolean\ removePesanan(Pesanan)
+comment2.text=\r\n\ Method\ ini\ berfungsi\ untuk\ menghapus\ pesanan\ \r\n\ @param\ pesan\ ini\ adalah\ parameter\ untuk\ menghapus\ pesanan\r\n
+comment3.params=cust
+comment3.target=Pesanan\ getPesanan(Customer)
+comment3.text=\r\n\ Method\ ini\ adalah\ accessor\ untuk\ mengembalikan\ pesanan\ customer\r\n\ @return\ null\r\n
+comment4.params=
+comment4.target=java.lang.String[]\ getPesananDatabase()
+comment4.text=\r\n\ Method\ ini\ adalah\ accessor\ untuk\ mengembalikan\ pesanan\ customer\ dari\ database\r\n\ @return\ null\r\n
+comment5.params=pesan
+comment5.target=void\ pesananDibatalkan(Pesanan)
+comment5.text=\r\n\ Method\ ini\ berfungsi\ untuk\ membatalkan\ pesanan\ customer\r\n\ @return\ null\r\n
+numComments=6

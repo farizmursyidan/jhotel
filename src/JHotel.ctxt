@@ -1,8 +1,0 @@
-#BlueJ class context
-comment0.target=JHotel
-comment0.text=\r\n\ Class\ JHotel\ merupakan\ class\ utama\ dan\ terdapat\ main\ pada\ class\ ini\r\n\r\n\ @author\ A.\ Fariz\ Mursyidan\r\n\ @version\ 01.03.2018\r\n
-comment1.params=args
-comment1.target=void\ main(java.lang.String[])
-comment2.params=
-comment2.target=JHotel()
-numComments=3
