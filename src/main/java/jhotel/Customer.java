@@ -11,10 +11,11 @@ import java.util.regex.*;
  */
 public class Customer
 {
-    protected int id;
-    protected String nama;
-    protected String email;
-    protected Date dob;
+    private int id;
+    private String nama;
+    private String email;
+    private Date dob;
+    private String password;
     SimpleDateFormat tbt = new SimpleDateFormat("dd MMMMMMMM yyyy");
 
     /**
@@ -23,20 +24,22 @@ public class Customer
     * @return tidak ada
     */
 
-    public Customer(String nama, int tanggal, int bulan, int tahun, String email)
+    public Customer(String nama, int tanggal, int bulan, int tahun, String email, String password)
     {
         this.id = DatabaseCustomer.getLastCustomerID() + 1;
         this.nama = nama;
         this.email = email;
         this.dob = new GregorianCalendar(tahun, bulan-1, tanggal).getTime();
+        this.password = password;
     }
 
-    public Customer(String nama, Date dob, String email)
+    public Customer(String nama, Date dob, String email, String password)
     {
         this.id = DatabaseCustomer.getLastCustomerID() + 1;
         this.nama = nama;
         this.dob = dob;
         this.email = email;
+        this.password = password;
     }
 
     /**
@@ -67,6 +70,11 @@ public class Customer
     public Date getDOB()
     {
         return dob;
+    }
+
+    public String getPassword()
+    {
+        return password;
     }
 
     /**
@@ -109,6 +117,11 @@ public class Customer
     public void setDOB(Date dob)
     {
         this.dob = dob;
+    }
+
+    public void setPassword(String password)
+    {
+        this.password = password;
     }
 
     public String toString()

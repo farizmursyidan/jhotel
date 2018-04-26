@@ -61,6 +61,19 @@ public class DatabaseCustomer
         return null;
     }
 
+    public static Customer getCustomerLogin(String email, String password)
+    {
+        for(Customer pelanggan : CUSTOMER_DATABASE)
+        {
+            if(pelanggan.getEmail().equals(email) && pelanggan.getPassword().equals(password))
+            {
+                return pelanggan;
+            }
+        }
+
+        return null;
+    }
+
     /**
     * Method ini berfungsi untuk menghapus customer 
     * @param id ini adalah parameter untuk menghapus customer

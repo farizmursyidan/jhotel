@@ -51,7 +51,7 @@ public class DatabaseHotel
     {
         for(Hotel hotel : HOTEL_DATABASE)
         {
-            if(id == hotel.getID())
+            if(hotel.getID() == id)
             {
                 return hotel;
             }
