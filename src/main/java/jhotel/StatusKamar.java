@@ -1,9 +1,9 @@
 package jhotel;
 /**
- * Ini adalah kelas enum Status Kamar yang berisi daftar status kamar
+ * Ini adalah kelas enum Status Kamar yang berisi daftar status kamar.
  *
  * @author A. Fariz Mursyidan
- * @version 08.03.2018
+ * @version 15.05.2018
  */
 public enum StatusKamar
 {

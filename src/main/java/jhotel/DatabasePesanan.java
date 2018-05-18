@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * Ini adalah kelas Database Pesanan yang menampung daftar pesanan.
  *
  * @author A. Fariz Mursyidan
- * @version 08.03.2018
+ * @version 15.05.2018
  */
 public class DatabasePesanan
 {
@@ -63,9 +63,10 @@ public class DatabasePesanan
     }
 
     /**
-    * Method ini adalah accessor untuk mengembalikan pesanan customer
-    * @return null
-    */
+     * Method ini berfungsi untuk mendapatkan data pesanan dari database
+     * @param id adalah parameter ID yang dibutuhkan untuk mendapatkan data pesanan
+     * @return pesan adalah mengembalikan data pesanan
+     */
 
     public static Pesanan getPesanan(int id)
     {
@@ -79,6 +80,12 @@ public class DatabasePesanan
         return null;
     }
 
+    /**
+     * Method ini berfungsi untuk mendapatkan data pesanan yang sedang berstatus aktif dari database
+     * @param kamar adalah parameter kamar yang dibutuhkan untuk mendapatkan data pesanan
+     * @return pesan adalah mengembalikan data pesanan aktif
+     */
+
     public static Pesanan getPesananAktif(Room kamar)
     {
         for(Pesanan pesan : PESANAN_DATABASE)
@@ -90,6 +97,12 @@ public class DatabasePesanan
         }
         return null;
     }
+
+    /**
+     * Method ini berfungsi untuk mendapatkan data pesanan yang sedang berstatus aktif dari database
+     * @param pelanggan adalah parameter kamar yang dibutuhkan untuk mendapatkan data pesanan
+     * @return pesan adalah mengembalikan data pesanan aktif
+     */
 
     public static Pesanan getPesananAktif(Customer pelanggan)
     {
@@ -104,23 +117,23 @@ public class DatabasePesanan
     }
 
     /**
-    * Method ini adalah accessor untuk mengembalikan pesanan customer dari database
-    * @return null
-    */
+     * Method ini adalah accessor untuk mendapatkan data pesanan dari database
+     * @return PESANAN_DATABASE mengembalikan database pesanan
+     */
 
     public static ArrayList<Pesanan> getPesananDatabase()
     {
         return PESANAN_DATABASE;
     }
 
+    /**
+     * Method ini berfungsi untuk mendapatkan ID pesanan terakhir dari database
+     * @return LAST_PESANAN_ID ini adalah mengembalikan ID pesanan terakhir dari database
+     */
+
     public static int getLastPesananID()
     {
         return LAST_PESANAN_ID;
     }
-
-    /**
-    * Method ini berfungsi untuk membatalkan pesanan customer
-    * @return null
-    */
 
 }

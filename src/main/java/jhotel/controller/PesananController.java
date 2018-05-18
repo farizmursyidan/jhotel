@@ -28,7 +28,7 @@ public class PesananController {
                                @RequestParam(value="id_customer") int id_customer,
                                @RequestParam(value="id_hotel") int id_hotel,
                                @RequestParam(value = "nomor_kamar") String nomor_kamar) {
-        Pesanan pesan = new Pesanan(jumlah_hari, DatabaseCustomer.getCustomer(id_customer));
+        Pesanan pesan = new Pesanan(jumlah_hari, id_hotel, nomor_kamar, DatabaseCustomer.getCustomer(id_customer));
 
         try {
             DatabasePesanan.addPesanan(pesan);
@@ -36,11 +36,11 @@ public class PesananController {
                     DatabaseRoom.getRoom(DatabaseHotel.getHotel(id_hotel), nomor_kamar));
             pesan.setTanggalPesan(new GregorianCalendar().getTime());
             Pesanan aktif = DatabasePesanan.getPesananAktif(DatabaseCustomer.getCustomer(id_customer));
-        } catch(PesananSudahAdaException ex) {
+            return aktif;
+        } catch(Exception ex) {
             ex.getMessage();
             return null;
-        };
-        return pesan;
+        }
     }
 
     @RequestMapping(value = "/cancelpesanan", method = RequestMethod.POST)

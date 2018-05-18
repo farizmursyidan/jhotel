@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * Ini adalah kelas Database Customer yang menampung daftar kamar hotel.
  *
  * @author A. Fariz Mursyidan
- * @version 08.03.2018
+ * @version 15.05.2018
  */
 public class DatabaseRoom
 {
@@ -30,6 +30,13 @@ public class DatabaseRoom
         return true;
     }
 
+    /**
+     * Method ini berfungsi untuk mendapatkan data kamar dari database
+     * @param hotel adalah parameter hotel yang dibutuhkan untuk mendapatkan data kamar
+     * @param nomor_kamar adalah parameter nomor kamar yang dibutuhkan untuk mendapatkan data kamar
+     * @return kamar adalah mengembalikan data kamar
+     */
+
     public static Room getRoom(Hotel hotel, String nomor_kamar)
     {
         for(Room kamar : ROOM_DATABASE)
@@ -42,6 +49,12 @@ public class DatabaseRoom
 
         return null;
     }
+
+    /**
+     * Method ini berfungsi untuk mendapatkan data kamar dari suatu hotel
+     * @param hotel adalah parameter hotel yang dibutuhkan untuk mendapatkan data kamar
+     * @return tempRoom adalah mengembalikan data kamar pada suatu hotel
+     */
 
     public static ArrayList<Room> getRoomsFromHotel(Hotel hotel)
     {
@@ -57,6 +70,11 @@ public class DatabaseRoom
 
         return tempRoom;
     }
+
+    /**
+     * Method ini berfungsi untuk mendapatkan data kamar yang berstatus vacant dari database
+     * @return tempVacantRoom adalah mengembalikan data kamar yang berstatus vacant
+     */
 
     public static ArrayList<Room> getVacantRooms()
     {
@@ -74,7 +92,9 @@ public class DatabaseRoom
     } 
 
     /**
-    * Method ini berfungsi untuk menghapus kamar
+    * Method ini berfungsi untuk menghapus kamar dari database
+    * @param hotel adalah parameter hotel yang dibutuhkan untuk mengetahui kamar tersebut berada pada hotel mana
+    * @param nomor_kamar adalah parameter nomor kamar yang dibutuhkan untuk menunjukkan kamar mana yang ingin dihapus
     */
 
     public static boolean removeRoom(Hotel hotel, String nomor_kamar) throws RoomTidakDitemukanException
@@ -96,7 +116,7 @@ public class DatabaseRoom
 
     /**
     * Method ini adalah accessor untuk mengembalikan data kamar dari database
-    * @return null
+    * @return ROOM_DATABASE mengembalikan data kamar dari database
     */
 
     public static ArrayList<Room> getRoomDatabase()

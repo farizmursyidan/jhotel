@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * Ini adalah kelas Database Hotel yang menampung daftar Hotel.
  *
  * @author A. Fariz Mursyidan
- * @version 08.03.2018
+ * @version 15.05.2018
  */
 public class DatabaseHotel
 {
@@ -13,14 +13,19 @@ public class DatabaseHotel
     private static int LAST_HOTEL_ID = 0;
 
     /**
-    * Method ini adalah accessor untuk mengembalikan data hotel dari database
-    * @return null
+    * Method ini adalah accessor untuk mendapatkan data hotel dari database
+    * @return HOTEL_DATABASE mengembalikan database hotel
     */
 
     public static ArrayList<Hotel> getHotelDatabase()
     {
         return HOTEL_DATABASE;
     }
+
+    /**
+     * Method ini berfungsi untuk mendapatkan ID hotel terakhir dari database
+     * @return LAST_HOTEL_ID ini adalah mengembalikan ID hotel terakhir dari database
+     */
 
     public static int getLastHotelID()
     {
@@ -47,6 +52,12 @@ public class DatabaseHotel
         return true;
     }
 
+    /**
+     * Method ini berfungsi untuk mendapatkan data hotel dari database
+     * @param id adalah parameter ID yang dibutuhkan untuk mendapatkan data hotel
+     * @return hotel adalah mengembalikan data hotel
+     */
+
     public static Hotel getHotel(int id)
     {
         for(Hotel hotel : HOTEL_DATABASE)
@@ -61,9 +72,9 @@ public class DatabaseHotel
     }
 
     /**
-    * Method ini berfungsi untuk menghapus hotel 
-    * @param id ini adalah parameter untuk menghapus hotel
-    */
+     * Method ini berfungsi untuk menghapus hotel dari database
+     * @param id adalah parameter ID yang dibutuhkan untuk menghapus data hotel
+     */
 
     public static boolean removeHotel(int id) throws HotelTidakDitemukanException
     {

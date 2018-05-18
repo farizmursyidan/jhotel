@@ -3,7 +3,7 @@ package jhotel;
  * Ini adalah kelas Hotel yang mendeskripsikan nama, lokasi, dan bintang hotel tersebut.
  *
  * @author A. Fariz Mursyidan
- * @version 08.03.2018
+ * @version 15.05.2018
  */
 public class Hotel
 {
@@ -13,8 +13,8 @@ public class Hotel
     private int bintang;
 
     /**
-    * Method ini merupakan constructor untuk meng-assign instance variable 
-    * @param nama ini adalah parameter untuk menentukan nama pelanggan
+    * Method ini merupakan constructor untuk membuat objek hotel
+    * @param nama ini adalah parameter untuk menentukan nama hotel
     * @param lokasi ini adalah parameter untuk menentukan lokasi hotel
     * @param bintang ini adalah parameter untuk memberikan bintang hotel
     * @return tidak ada
@@ -27,6 +27,11 @@ public class Hotel
         this.bintang = bintang;
         this.id = DatabaseHotel.getLastHotelID() + 1;
     }
+
+    /**
+     * Method ini adalah accessor untuk mendapatkan id hotel
+     * @return id mengembalikan id hotel
+     */
 
     public int getID()
     {
@@ -62,6 +67,11 @@ public class Hotel
     {
         return lokasi;
     }
+
+    /**
+     * Method ini adalah mutator untuk menetapkan id hotel
+     * @param id adalah id hotel
+     */
 
     public void setID(int id)
     {

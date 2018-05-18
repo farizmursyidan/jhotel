@@ -1,4 +1,12 @@
 package jhotel;
+
+/**
+ * Ini adalah kelas Exception yang akan menghandle jika kamar yang dimasukkan ke database sudah ada sebelumnya
+ *
+ * @author A. Fariz Mursyidan
+ * @version 15.05.2018
+ */
+
 public class RoomSudahAdaException extends Exception
 {
     private Room room_error;

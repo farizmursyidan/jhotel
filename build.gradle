@@ -28,4 +28,5 @@ targetCompatibility = 1.8
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile 'postgresql:postgresql:9.1-901-1.jdbc4'
 }

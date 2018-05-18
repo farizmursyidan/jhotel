@@ -3,7 +3,7 @@ package jhotel;
  * Ini adalah kelas Room yang mengolah kamar customer saat memesan hotel.
  *
  * @author A. Fariz Mursyidan
- * @version 08.03.2018
+ * @version 15.05.2018
  */
 public abstract class Room
 {
@@ -13,22 +13,23 @@ public abstract class Room
     protected double dailyTariff;
 
     /**
-    * Method ini merupakan constructor untuk meng-assign instance variable 
+    * Method ini merupakan constructor untuk membuat objek room
     * @param hotel adalah parameter untuk memasukkan data dari kelas hotel
-    * @param nomor_kamar adalah nomor kamar pelanggan
+    * @param nomor_kamar adalah nomor kamar
+    * @param dailyTariff adalah tarif harian kamar
     * @return tidak ada
     */
 
-    public Room(Hotel hotel, String nomor_kamar)
+    public Room(Hotel hotel, String nomor_kamar, double dailyTariff)
     {
         this.hotel = hotel;
         this.nomor_kamar = nomor_kamar;
         this.status_kamar = StatusKamar.VACANT;
+        this.dailyTariff = dailyTariff;
     }
 
-
     /**
-    * Method ini adalah accessor untuk mengembalikan data hotel
+    * Method ini adalah accessor untuk mendapatkan data hotel
     * @return hotel mengembalikan data hotel
     */
 
@@ -38,7 +39,7 @@ public abstract class Room
     }
 
     /**
-    * Method ini adalah accessor untuk mengembalikan nomor kamar
+    * Method ini adalah accessor untuk mendapatkan nomor kamar
     * @return nomor_kamar mengembalikan nomor kamar
     */
 
@@ -48,7 +49,7 @@ public abstract class Room
     }
 
     /**
-    * Method ini adalah accessor untuk mengembalikan harga per hari sewa kamar
+    * Method ini adalah accessor untuk mendapatkan harga per hari sewa kamar
     * @return dailyTariff mengembalikan harga per hari sewa kamar
     */
 
@@ -58,7 +59,7 @@ public abstract class Room
     }
 
     /**
-    * Method ini adalah accessor untuk mengembalikan status kamar
+    * Method ini adalah accessor untuk mendapatkan status kamar
     * @return status_kamar mengembalikan status kamar
     */
 
@@ -66,6 +67,10 @@ public abstract class Room
     {
         return status_kamar;
     }
+
+    /**
+     * Method ini adalah accessor untuk mendapatkan tipe kamar
+     */
 
     public abstract TipeKamar getTipeKamar();
 

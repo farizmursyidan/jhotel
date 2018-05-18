@@ -3,7 +3,7 @@ package jhotel;
  * Ini adalah kelas Lokasi yang mendeskripsikan lokasi hotel melalui koordinat dan deskripsi.
  *
  * @author A. Fariz Mursyidan
- * @version 08.03.2018
+ * @version 15.05.2018
  */
 public class Lokasi
 {
@@ -12,7 +12,7 @@ public class Lokasi
     private String deskripsiLokasi;
 
     /**
-    * Method ini merupakan constructor untuk meng-assign instance variable 
+    * Method ini merupakan constructor untuk membuat objek lokasi
     * @param x_coord ini adalah parameter untuk menentukan koordinat x dari lokasi
     * @param y_coord ini adalah parameter untuk menentukan koordinat y dari lokasi
     * @param deskripsiLokasi ini adalah parameter untuk memberikan deskripsi dari lokasi hotel

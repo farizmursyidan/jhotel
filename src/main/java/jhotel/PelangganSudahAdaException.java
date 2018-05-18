@@ -1,4 +1,12 @@
 package jhotel;
+
+/**
+ * Ini adalah kelas Exception yang akan menghandle jika pelanggan yang dimasukkan ke database sudah ada sebelumnya
+ *
+ * @author A. Fariz Mursyidan
+ * @version 15.05.2018
+ */
+
 public class PelangganSudahAdaException extends Exception
 {
     private Customer pelanggan_error;

@@ -1,9 +1,9 @@
 package jhotel;
 /**
- * Ini adalah kelas enum Tipe Kamar yang berisi daftar tipe kamar
+ * Ini adalah kelas enum Tipe Kamar yang berisi daftar tipe kamar.
  *
  * @author A. Fariz Mursyidan
- * @version 08.03.2018
+ * @version 15.05.2018
  */
 public enum TipeKamar
 {

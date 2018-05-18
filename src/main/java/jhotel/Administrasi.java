@@ -3,13 +3,14 @@ package jhotel;
  * Ini adalah kelas administrasi yang mengatur segala hal tentang pemesanan kamar hotel
  *
  * @author A. Fariz Mursyidan
- * @version 08.03.2018
+ * @version 15.05.2018
  */
 public class Administrasi
 {
     /**
     * Method ini berfungsi untuk memproses sebuah pesanan baru
-    * @param pesan mengambil data dari kelas Pesanan dan kamar mengambil data dari kelas Room
+    * @param pesan mengambil data dari kelas Pesanan
+    * @param kamar mengambil data dari kelas Room
     */
 
     public static void pesananDitugaskan(Pesanan pesan, Room kamar)
@@ -30,7 +31,8 @@ public class Administrasi
 
     /**
     * Method ini berfungsi untuk mem-booking sebuah kamar
-    * @param pesan mengambil data dari kelas Pesanan dan kamar mengambil data dari kelas Room
+    * @param pesan mengambil data dari kelas Pesanan
+    * @param kamar mengambil data dari kelas Room
     */
 
     public static void roomAmbilPesanan(Pesanan pesan, Room kamar)
@@ -39,7 +41,7 @@ public class Administrasi
     }
 
     /**
-    * Method ini berfungsi untuk mengosongkan sebuah kamar
+    * Method ini berfungsi untuk mengosongkan pesanan dari sebuah kamar
     * @param kamar mengambil data dari kelas Room
     */
 
@@ -50,7 +52,7 @@ public class Administrasi
 
     /**
     * Method ini berfungsi untuk membatalkan pesanan dengan mengubah
-    * status selesai dan diproses menjadi false dan status room menjadi null serta me-unlink masing-masing objek.
+    * status selesai, diproses, dan status aktif menjadi false serta mengosongkan pesanan dari objek kamar.
     * @param kamar mengambil data dari kelas Room
     */
 
@@ -69,6 +71,12 @@ public class Administrasi
         roomLepasPesanan(kamar);
     }
 
+    /**
+     * Method ini berfungsi untuk menyelesaikan pesanan dengan mengubah
+     * status selesai menjadi true dan status diproses dan status aktif menjadi false serta mengosongkan pesanan dari objek kamar.
+     * @param kamar mengambil data dari kelas Room
+     */
+
     public static void pesananSelesai(Room kamar)
     {
         Pesanan pesan = DatabasePesanan.getPesananAktif(kamar);
@@ -80,6 +88,12 @@ public class Administrasi
         roomLepasPesanan(kamar);
     }
 
+    /**
+     * Method ini berfungsi untuk membatalkan pesanan dengan mengubah
+     * status selesai, diproses, dan status aktif menjadi false serta mengosongkan pesanan dari objek kamar.
+     * @param pesan mengambil data dari kelas Pesanan
+     */
+
     public static void pesananDibatalkan(Pesanan pesan)
     {
         roomLepasPesanan(pesan.getRoom());
@@ -89,6 +103,12 @@ public class Administrasi
         pesan.setStatusAktif(false);
 //        pesan.setRoom(null);
     }
+
+    /**
+     * Method ini berfungsi untuk menyelesaikan pesanan dengan mengubah
+     * status selesai menjadi true dan status diproses dan status aktif menjadi false serta mengosongkan pesanan dari objek kamar.
+     * @param pesan mengambil data dari kelas Pesanan
+     */
 
     public static void pesananSelesai(Pesanan pesan)
     {

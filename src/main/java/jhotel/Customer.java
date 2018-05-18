@@ -3,12 +3,14 @@ import java.text.*;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.regex.*;
+
 /**
  * Ini adalah kelas Customer untuk mengolah data customer hotel.
  *
  * @author A. Fariz Mursyidan
- * @version 08.03.2018
+ * @version 15.05.2018
  */
+
 public class Customer
 {
     private int id;
@@ -16,22 +18,39 @@ public class Customer
     private String email;
     private Date dob;
     private String password;
+    private String photo;
     SimpleDateFormat tbt = new SimpleDateFormat("dd MMMMMMMM yyyy");
 
     /**
-    * Method ini merupakan constructor untuk meng-assign instance variable
+    * Method ini merupakan constructor untuk membuat objek customer
     * @param nama ini adalah parameter untuk menentukan nama customer
+    * @param tanggal ini adalah parameter untuk menentukan tanggal lahir customer
+    * @param bulan ini adalah parameter untuk menentukan bulan lahir customer
+    * @param tahun ini adalah parameter untuk menentukan tahun lahir customer
+    * @param email ini adalah parameter untuk menentukan email customer
+    * @param password ini adalah parameter untuk menentukan password customer
+    * @param photo ini adalah parameter untuk menentukan string lokasi tempat penyimpanan foto profil customer pada server
     * @return tidak ada
     */
 
-    public Customer(String nama, int tanggal, int bulan, int tahun, String email, String password)
+    public Customer(String nama, int tanggal, int bulan, int tahun, String email, String password, String photo)
     {
         this.id = DatabaseCustomer.getLastCustomerID() + 1;
         this.nama = nama;
         this.email = email;
         this.dob = new GregorianCalendar(tahun, bulan-1, tanggal).getTime();
         this.password = password;
+        this.photo = photo;
     }
+
+    /**
+     * Method ini merupakan constructor untuk membuat objek customer
+     * @param nama ini adalah parameter untuk menentukan nama customer
+     * @param dob ini adalah parameter untuk menentukan tanggal, bulan, dan tahun lahir customer
+     * @param email ini adalah parameter untuk menentukan email customer
+     * @param password ini adalah parameter untuk menentukan password customer
+     * @return tidak ada
+     */
 
     public Customer(String nama, Date dob, String email, String password)
     {
@@ -43,7 +62,17 @@ public class Customer
     }
 
     /**
-    * Method ini adalah accessor untuk mengembalikan id customer
+     * Method ini adalah accessor untuk mendapatkan string lokasi tempat penyimpanan foto profil customer pada server
+     * @return photo mengembalikan string lokasi tempat penyimpanan foto profil customer pada server
+     */
+
+    public String getPhoto()
+    {
+        return photo;
+    }
+
+    /**
+    * Method ini adalah accessor untuk mendapatkan id customer
     * @return id mengembalikan id customer
     */
 
@@ -53,7 +82,7 @@ public class Customer
     }
 
     /**
-    * Method ini adalah accessor untuk mengembalikan nama customer
+    * Method ini adalah accessor untuk mendapatkan nama customer
     * @return nama mengembalikan nama customer
     */
 
@@ -62,15 +91,30 @@ public class Customer
         return nama;
     }
 
+    /**
+    * Method ini adalah accessor untuk mendapatkan email customer
+    * @return email mengembalikan email customer
+    */
+
     public String getEmail()
     {
         return email;
     }
 
+    /**
+    * Method ini adalah accessor untuk mendapatkan tanggal, bulan, tahun lahir customer
+    * @return dob mengembalikan tanggal, bulan, lahir customer
+    */
+
     public Date getDOB()
     {
         return dob;
     }
+
+    /**
+    * Method ini adalah accessor untuk mendapatkan password customer
+    * @return password mengembalikan password customer
+    */
 
     public String getPassword()
     {
@@ -89,13 +133,18 @@ public class Customer
 
     /**
     * Method ini adalah mutator untuk menetapkan nama customer
-    * @param nama mengembalikan nama customer
+    * @param nama adalah nama customer
     */
 
     public void setNama(String nama)
     {
         this.nama = nama;
     }
+
+    /**
+    * Method ini adalah mutator untuk menetapkan email customer
+    * @param email adalah email customer
+    */
 
     public void setEmail(String email)
     {
@@ -114,10 +163,20 @@ public class Customer
         }
     }
 
+    /**
+     * Method ini adalah mutator untuk menetapkan tanggal, bulan, tahun lahir customer
+     * @param dob adalah tanggal, bulan, tahun lahir customer
+     */
+
     public void setDOB(Date dob)
     {
         this.dob = dob;
     }
+
+    /**
+     * Method ini adalah mutator untuk menetapkan password customer
+     * @param password adalah password customer
+     */
 
     public void setPassword(String password)
     {

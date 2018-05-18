@@ -4,7 +4,7 @@ import java.util.Date;
  * Ini adalah kelas Pesanan yang mengolah pesanan customer saat memesan hotel.
  *
  * @author A. Fariz Mursyidan
- * @version 08.03.2018
+ * @version 15.05.2018
  */
 public class Pesanan
 {
@@ -19,18 +19,28 @@ public class Pesanan
     private Date tanggalPesan;
 
     /**
-    * Method ini merupakan constructor untuk meng-assign instance variable
+    * Method ini merupakan constructor untuk membuat objek pesanan
+    * @param jumlahHari adalah jumlah hari yang diinginkan customer
+    * @param idHotel adalah id hotel yang ingin dipesan customer
+    * @param nomorKamar adalah nomor kamar yang ingin dipesan customer
     * @param pelanggan adalah customer yang memesan hotel
     * @return tidak ada
     */
 
-    public Pesanan(double jumlahHari, Customer pelanggan)
+    public Pesanan(double jumlahHari, int idHotel, String nomorKamar, Customer pelanggan)
     {
     	this.jumlahHari = jumlahHari;
     	this.pelanggan = pelanggan;
-    	isAktif = true;
-    	tanggalPesan = new Date();
-    	id = DatabasePesanan.getLastPesananID()+1;
+    	this.isAktif = true;
+    	this.kamar = DatabaseRoom.getRoom(DatabaseHotel.getHotel(idHotel), nomorKamar);
+    	try {
+    	    this.biaya = jumlahHari * kamar.getDailyTariff();
+        }
+        catch (Exception e) {
+    	    System.out.println(""+e);
+        }
+    	this.tanggalPesan = new Date();
+    	this.id = DatabasePesanan.getLastPesananID()+1;
     }
 
 //    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar, Date tanggalPesan)
@@ -42,13 +52,18 @@ public class Pesanan
 //        this.tanggalPesan = tanggalPesan;
 //    }
 
+    /**
+     * Method ini adalah accessor untuk mendapatkan id pesanan
+     * @return id mengembalikan id pesanan
+     */
+
     public int getID()
     {
         return id;
     }
 
     /**
-    * Method ini adalah accessor untuk mengembalikan jumlah biaya
+    * Method ini adalah accessor untuk mendapatkan jumlah biaya yang harus dibayar customer
     * @return biaya mengembalikan jumlah biaya
     */
 
@@ -57,13 +72,18 @@ public class Pesanan
         return biaya;
     }
 
+    /**
+     * Method ini adalah accessor untuk mendapatkan jumlah hari customer ingin menginap
+     * @return jumlahHari mengembalikan jumlah hari
+     */
+
     public double getJumlahHari()
     {
         return jumlahHari;
     }
 
     /**
-    * Method ini adalah accessor untuk mengembalikan data pelanggan
+    * Method ini adalah accessor untuk mendapatkan data pelanggan
     * @return pelanggan mengembalikan data pelanggan
     */
 
@@ -72,16 +92,20 @@ public class Pesanan
         return pelanggan;
     }
 
+    /**
+     * Method ini adalah accessor untuk mengecek status aktif dari pesanan
+     * @return isAktif mengembalikan status aktif pesanan
+     */
+
     public boolean getStatusAktif()
     {
         return isAktif;
     }
 
-
     /**
-    * Method ini adalah accessor untuk mengembalikan status diproses
-    * @return isDiproses mengembalikan status diproses
-    */
+     * Method ini adalah accessor untuk mengecek status diproses dari pesanan
+     * @return isDiproses mengembalikan status diproses pesanan
+     */
 
     public boolean getStatusDiproses()
     {
@@ -89,9 +113,9 @@ public class Pesanan
     }
 
     /**
-    * Method ini adalah accessor untuk mengembalikan status selesai
-    * @return isSelesai mengembalikan status selesai
-    */
+     * Method ini adalah accessor untuk mengecek status selesai dari pesanan
+     * @return isSelesai mengembalikan status selesai pesanan
+     */
 
     public boolean getStatusSelesai()
     {
@@ -99,7 +123,7 @@ public class Pesanan
     }    
 
     /**
-    * Method ini adalah accessor untuk mengembalikan rincian data kamar pelanggan
+    * Method ini adalah accessor untuk mendapatkan rincian data kamar pelanggan
     * @return kamar mengembalikan rincian data kamar pelanggan
     */
 
@@ -108,24 +132,40 @@ public class Pesanan
     	return kamar;
     }
 
+    /**
+     * Method ini adalah accessor untuk mendapatkan tanggal kapan customer memesan kamar
+     * @return tanggalPesan mengembalikan tanggal dibuatnya pesanan
+     */
+
     public Date getTanggalPesan()
     {
         return tanggalPesan;
     }
 
-    public void setID()
+    /**
+     * Method ini adalah mutator untuk menetapkan id pesanan
+     * @param id adalah id pesanan
+     */
+
+    public void setID(int id)
     {
         this.id = id;
     }
 
     /**
     * Method ini adalah mutator untuk menetapkan jumlah biaya
+    * @param biaya adalah biaya yang harus dibayar
     */
 
-    public void setBiaya()
+    public void setBiaya(double biaya)
     {
-        biaya = kamar.getDailyTariff()*jumlahHari;
+        this.biaya = kamar.getDailyTariff()*jumlahHari;
     }
+
+    /**
+     * Method ini adalah mutator untuk menetapkan jumlah hari
+     * @param jumlahHari adalah jumlah hari
+     */
 
     public void setJumlahHari(double jumlahHari)
     {
@@ -141,6 +181,11 @@ public class Pesanan
     {
         this.pelanggan = pelanggan;
     }
+
+    /**
+     * Method ini adalah mutator untuk menetapkan status aktif
+     * @param aktif adalah status sedang aktif atau tidak
+     */
 
     public void setStatusAktif(boolean aktif)
     {
@@ -176,6 +221,11 @@ public class Pesanan
     {
     	this.kamar = kamar;
     }
+
+    /**
+     * Method ini adalah mutator untuk menetapkan tanggal pesanan
+     * @param tanggalPesan adalah data tanggal pesanan
+     */
 
     public Date setTanggalPesan(Date tanggalPesan)
     {

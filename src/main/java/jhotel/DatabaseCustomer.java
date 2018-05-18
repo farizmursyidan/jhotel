@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * Ini adalah kelas Database Customer yang menampung daftar Customer hotel.
  *
  * @author A. Fariz Mursyidan
- * @version 08.03.2018
+ * @version 15.05.2018
  */
 
 public class DatabaseCustomer
@@ -14,14 +14,19 @@ public class DatabaseCustomer
     private static int LAST_CUSTOMER_ID = 0;
 
     /**
-    * Method ini adalah accessor untuk mengembalikan data customer dari database
-    * @return null
+    * Method ini adalah accessor untuk mendapatkan data customer dari database
+    * @return CUSTOMER_DATABASE mengembalikan database customer
     */
 
     public static ArrayList<Customer> getCustomerDatabase()
     {
         return CUSTOMER_DATABASE;
     }
+
+    /**
+     * Method ini berfungsi untuk mendapatkan ID customer terakhir dari database
+     * @return LAST_CUSTOMER_ID ini adalah mengembalikan ID customer terakhir dari database
+     */
 
     public static int getLastCustomerID()
     {
@@ -48,6 +53,12 @@ public class DatabaseCustomer
         return true;
     }
 
+    /**
+     * Method ini berfungsi untuk mendapatkan data customer dari database
+     * @param id adalah parameter ID yang dibutuhkan untuk mendapatkan data customer
+     * @return pelanggan adalah mengembalikan data customer
+     */
+
     public static Customer getCustomer(int id)
     {
         for(Customer pelanggan : CUSTOMER_DATABASE)
@@ -60,6 +71,14 @@ public class DatabaseCustomer
 
         return null;
     }
+
+    /**
+     * Method ini berfungsi untuk mengecek data customer yang dimasukkan ketika login dengan database
+     * apabila cocok, maka customer dapat login
+     * @param email adalah parameter email yang dibutuhkan untuk login
+     * @param password adalah parameter password yang dibutuhkan untuk login
+     * @return pelanggan adalah mengembalikan data customer
+     */
 
     public static Customer getCustomerLogin(String email, String password)
     {
@@ -75,8 +94,8 @@ public class DatabaseCustomer
     }
 
     /**
-    * Method ini berfungsi untuk menghapus customer 
-    * @param id ini adalah parameter untuk menghapus customer
+    * Method ini berfungsi untuk menghapus customer dari database
+    * @param id adalah parameter ID yang dibutuhkan untuk menghapus data customer
     */
 
     public static boolean removeCustomer(int id) throws PelangganTidakDitemukanException
